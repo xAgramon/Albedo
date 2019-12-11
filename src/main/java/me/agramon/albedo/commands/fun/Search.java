@@ -78,8 +78,8 @@ public class Search extends Command {
                 e.reply("Invalid imageboard! Please try <sb/db/kc/gb/e621/e926/rule34/yandere>");
                 return;
             }
-        } catch (QueryParseException q) {
-            e.reply("That is not a valid tag! Please try another search word!");
+        } catch (Exception ex) {
+            e.reply("Something went wrong!");
             return;
         }
 

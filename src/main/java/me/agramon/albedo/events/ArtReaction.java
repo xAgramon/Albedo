@@ -1,12 +1,13 @@
 package me.agramon.albedo.events;
 
-import com.mongodb.BasicDBObject;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import me.agramon.albedo.Config;
+import net.dv8tion.jda.api.entities.Emote;
 import net.dv8tion.jda.api.entities.MessageChannel;
+import net.dv8tion.jda.api.entities.MessageReaction;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.guild.react.GuildMessageReactionAddEvent;
 import net.dv8tion.jda.api.events.message.guild.react.GuildMessageReactionRemoveEvent;
@@ -31,6 +32,12 @@ public class ArtReaction extends ListenerAdapter {
                 m.retrieveMessageById(e.getMessageId()).queue(message -> {
 
                     String user = message.getAuthor().getId();
+
+                    Emote emote = e.getReactionEmote().getEmote();
+                    if (user.equals(e.getUserId())) {
+                        message.removeReaction(emote, e.getMember().getUser()).queue();
+                        return;
+                    }
 
                     String URI = Config.getURI("URI");
                     MongoClient mongoClient = MongoClients.create(URI);
@@ -67,6 +74,10 @@ public class ArtReaction extends ListenerAdapter {
                 m.retrieveMessageById(e.getMessageId()).queue(message -> {
 
                     String user = message.getAuthor().getId();
+
+                    if (user.equals(e.getUserId())) {
+                        return;
+                    }
 
                     String URI = Config.getURI("URI");
                     MongoClient mongoClient = MongoClients.create(URI);

@@ -2,13 +2,15 @@ package me.agramon.albedo;
 
 import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
-import io.github.cdimascio.dotenv.Dotenv;
-import me.agramon.albedo.commands.administration.*;
+import me.agramon.albedo.commands.administration.AddUsers;
+import me.agramon.albedo.commands.administration.ChatClear;
+import me.agramon.albedo.commands.administration.SetAdores;
 import me.agramon.albedo.commands.fun.*;
 import me.agramon.albedo.commands.info.*;
 import me.agramon.albedo.commands.nsfw.*;
 import me.agramon.albedo.commands.roleplay.*;
-import me.agramon.albedo.events.*;
+import me.agramon.albedo.events.ArtReaction;
+import me.agramon.albedo.events.UserCreateDB;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
