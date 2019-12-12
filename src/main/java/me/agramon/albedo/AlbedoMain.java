@@ -5,6 +5,7 @@ import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import me.agramon.albedo.commands.administration.AddUsers;
 import me.agramon.albedo.commands.administration.ChatClear;
 import me.agramon.albedo.commands.administration.SetAdores;
+import me.agramon.albedo.commands.administration.SetCredits;
 import me.agramon.albedo.commands.economy.*;
 import me.agramon.albedo.commands.fun.*;
 import me.agramon.albedo.commands.info.*;
@@ -68,6 +69,7 @@ public class AlbedoMain {
         builder.addCommand(new AddUsers());
         builder.addCommand(new ChatClear());
         builder.addCommand(new SetAdores());
+        builder.addCommand(new SetCredits());
 
         CommandClient client = builder.build();
 

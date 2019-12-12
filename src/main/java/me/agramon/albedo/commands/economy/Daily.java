@@ -14,6 +14,7 @@ public class Daily extends Command {
         super.name = "daily";
         super.help = "Daily dose of credits :)";
         super.cooldown = 86400;
+        super.category = new Category("Economy");
     }
 
     @Override
