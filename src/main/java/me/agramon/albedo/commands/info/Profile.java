@@ -8,6 +8,7 @@ import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import me.agramon.albedo.Config;
 import net.dv8tion.jda.api.EmbedBuilder;
+import net.dv8tion.jda.api.entities.Emote;
 import net.dv8tion.jda.api.entities.Member;
 import org.bson.Document;
 
@@ -27,7 +28,7 @@ public class Profile extends Command {
     protected void execute(CommandEvent e) {
         Member name;
 
-        if (e.getArgs() == "") {
+        if (e.getArgs().isEmpty()) {
             name = e.getMember();
         } else if (e.getMessage().getMentionedMembers().size() != 0){
             name = e.getMessage().getMentionedMembers().get(0);
@@ -37,20 +38,22 @@ public class Profile extends Command {
         }
 
         String adores;
+        String credits;
         String URI = Config.getURI("URI");
         MongoClient mongoClient = MongoClients.create(URI);
         MongoDatabase db = mongoClient.getDatabase("Albedo");
-        MongoCollection<Document> collection = db.getCollection("Adores");
+        MongoCollection<Document> collection = db.getCollection("Anime Argonauts");
 
         Document found = collection.find(new Document("UserID", name.getId())).first();
         if (found != null) {
             adores = found.get("Adores") + "";
+            credits = found.get("Credits") + "";
         } else {
-            Document document = new Document("UserID", e.getMember().getId());
-            document.append("Adores", 0);
-            collection.insertOne(document);
-            adores = "0";
+            e.reply("You are current not in the database. Please contact an administrator");
+            return;
         }
+
+        Emote emote = e.getJDA().getEmoteById("652666759651917841");
 
         EmbedBuilder eb = new EmbedBuilder()
                 .setColor(Color.MAGENTA)
@@ -59,20 +62,9 @@ public class Profile extends Command {
                 .addField("Username:", name.getUser().getName(), false)
                 .addField("Account Created:", name.getUser().getTimeCreated().format(DateTimeFormatter.RFC_1123_DATE_TIME), false)
                 .addField("Server Joined:", name.getTimeJoined().format(DateTimeFormatter.RFC_1123_DATE_TIME), false)
-                .addField("Adores :heart::", adores, false);
+                .addField("Adores " + emote.getAsMention() + ":", adores, false)
+                .addField("Credits 💰:", credits, false);
 
         e.reply(eb.build());
-    }
-
-    private String getRoles (Member name) {
-        String roles = "";
-        for (int i = 0; i < name.getRoles().size(); i++) {
-            String temp = name.getRoles().get(i) + "";
-            if (roles != "") {
-                roles += ", ";
-            }
-            roles += temp.substring(2, temp.indexOf("("));
-        }
-        return roles;
     }
 }

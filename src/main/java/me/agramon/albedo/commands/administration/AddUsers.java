@@ -33,16 +33,15 @@ public class AddUsers extends Command {
         String URI = Config.getURI("URI");
         MongoClient mongoClient = MongoClients.create(URI);
         MongoDatabase db = mongoClient.getDatabase("Albedo");
-        MongoCollection<Document> collection = db.getCollection("Adores");
+        MongoCollection<Document> collection = db.getCollection("Anime Argonauts");
 
         for (int i = 0; i < members.size(); i++) {
             String user = members.get(i).getId();
             Document found = collection.find(new Document("UserID", user)).first();
-            if (found != null) {
-                // Do Nothing
-            } else {
+            if (found == null) {
                 Document document = new Document("UserID", user);
                 document.append("Adores", 0);
+                document.append("Credits", 0);
                 collection.insertOne(document);
                 added++;
             }

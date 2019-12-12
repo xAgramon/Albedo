@@ -15,11 +15,12 @@ public class UserCreateDB extends ListenerAdapter {
         String URI = Config.getURI("URI");
         MongoClient mc = MongoClients.create(URI);
         MongoDatabase mb = mc.getDatabase("Albedo");
-        MongoCollection<Document> collection = mb.getCollection("Adores");
+        MongoCollection<Document> collection = mb.getCollection("Anime Argonauts");
 
         Document user = new Document("UserID", e.getMember().getId());
         user.append("UserID", e.getMember().getId());
         user.append("Adores", 0);
+        user.append("Credits", 0);
         collection.insertOne(user);
     }
 
@@ -27,7 +28,7 @@ public class UserCreateDB extends ListenerAdapter {
         String URI = Config.getURI("URI");
         MongoClient mc = MongoClients.create(URI);
         MongoDatabase mb = mc.getDatabase("Albedo");
-        MongoCollection<Document> collection = mb.getCollection("Adores");
+        MongoCollection<Document> collection = mb.getCollection("Anime Argonauts");
 
         Document user = collection.find(new Document("UserID", e.getMember().getId())).first();
         collection.deleteOne(user);

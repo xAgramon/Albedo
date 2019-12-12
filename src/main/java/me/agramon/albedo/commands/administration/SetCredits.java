@@ -10,10 +10,10 @@ import me.agramon.albedo.Config;
 import net.dv8tion.jda.api.Permission;
 import org.bson.Document;
 
-public class SetAdores extends Command {
-    public SetAdores() {
-        super.name = "setadores";
-        super.help = "Sets a users adores!";
+public class SetCredits extends Command {
+    public SetCredits() {
+        super.name = "setcredits";
+        super.help = "Sets a users credits!";
         super.category = new Category("Administration");
     }
 
@@ -29,12 +29,12 @@ public class SetAdores extends Command {
 
 
         if (temp.isEmpty() || args.length != 2) {
-            e.reply("Invalid arguments! The correct usage is >s <user> <# of adores>");
+            e.reply("Invalid arguments! The correct usage is >s <user> <# of credits>");
             return;
         }
 
         String user = args[0];
-        int adores = Integer.parseInt(args[1]);
+        int credits = Integer.parseInt(args[1]);
 
         String URI = Config.getURI("URI");
         MongoClient mongoClient = MongoClients.create(URI);
@@ -46,11 +46,11 @@ public class SetAdores extends Command {
             Document query = new Document();
             query.append("UserID", user);
             Document setData = new Document();
-            setData.append("Adores", adores);
+            setData.append("Credits", credits);
             Document update = new Document();
             update.append("$set", setData);
             collection.updateOne(query, update);
-            e.reply("User now has " + args[1] + " adores!");
+            e.reply("User now has " + args[1] + " credits!");
         } else {
             e.reply("Error! User not in database!");
         }

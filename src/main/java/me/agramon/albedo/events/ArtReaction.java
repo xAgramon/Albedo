@@ -7,7 +7,6 @@ import com.mongodb.client.MongoDatabase;
 import me.agramon.albedo.Config;
 import net.dv8tion.jda.api.entities.Emote;
 import net.dv8tion.jda.api.entities.MessageChannel;
-import net.dv8tion.jda.api.entities.MessageReaction;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 import net.dv8tion.jda.api.events.message.guild.react.GuildMessageReactionAddEvent;
 import net.dv8tion.jda.api.events.message.guild.react.GuildMessageReactionRemoveEvent;
@@ -42,7 +41,7 @@ public class ArtReaction extends ListenerAdapter {
                     String URI = Config.getURI("URI");
                     MongoClient mongoClient = MongoClients.create(URI);
                     MongoDatabase db = mongoClient.getDatabase("Albedo");
-                    MongoCollection<Document> collection = db.getCollection("Adores");
+                    MongoCollection<Document> collection = db.getCollection("Anime Argonauts");
 
                     Document found = collection.find(new Document("UserID", user)).first();
                     if (found != null) {
@@ -56,11 +55,6 @@ public class ArtReaction extends ListenerAdapter {
                         Document update = new Document();
                         update.append("$set", setData);
                         collection.updateOne(query, update);
-
-                    } else {
-                        Document document = new Document("UserID", user);
-                        document.append("Adores", 1);
-                        collection.insertOne(document);
                     }
                 });
             }
@@ -82,7 +76,7 @@ public class ArtReaction extends ListenerAdapter {
                     String URI = Config.getURI("URI");
                     MongoClient mongoClient = MongoClients.create(URI);
                     MongoDatabase db = mongoClient.getDatabase("Albedo");
-                    MongoCollection<Document> collection = db.getCollection("Adores");
+                    MongoCollection<Document> collection = db.getCollection("Anime Argonauts");
 
                     Document found = collection.find(new Document("UserID", user)).first();
                     if (found != null) {
@@ -96,11 +90,6 @@ public class ArtReaction extends ListenerAdapter {
                         Document update = new Document();
                         update.append("$set", setData);
                         collection.updateOne(query, update);
-
-                    } else {
-                        Document document = new Document("UserID", user);
-                        document.append("Adores", 0);
-                        collection.insertOne(document);
                     }
                 });
             }

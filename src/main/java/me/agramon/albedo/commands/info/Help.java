@@ -30,6 +30,7 @@ public class Help extends Command {
                                 "• dmhelp \n" +
                                 "• avatar <user> \n" +
                                 "• info \n" +
+                                "• ping \n" +
                                 "• profile <user> \n" +
                                 "• uptime \n"
                         , true)
@@ -42,9 +43,13 @@ public class Help extends Command {
                                 "• kitsune \n" +
                                 "• neko \n" +
                                 "• paste <message> \n" +
-                                "• ping \n" +
                                 "• safebooru \n" +
                                 "• search <board> <tag> \n"
+                        , true)
+
+                .addField(":moneybag: Economy :moneybag:",
+                        "• balance <user> \n" +
+                                "• daily \n"
                         , true)
 
                 .addField(":performing_arts: Roleplay :performing_arts:",
@@ -70,7 +75,8 @@ public class Help extends Command {
                 .addField(":pencil: Administration :pencil:",
                         "• addusers \n" +
                                 "• chatclear <#> \n" +
-                                "• setadores <#> \n"
+                                "• setadores <user> <#> \n" +
+                                "• setcredits <user> <#> \n"
                         , true);
 
         e.reply(eb.build());
@@ -81,7 +87,8 @@ public class Help extends Command {
 
                 .addField(":exclamation: Features :exclamation:",
                         "➢ Reacts to submissions in art channels \n" +
-                                "➢ Keeps track of 'adores' each submission gets in your profile"
+                                "➢ Keeps track of 'adores' each submission gets in your profile \n" +
+                                "➢ Economy system with credits (shop soon to come!) \n"
                         , true);
         e.reply(eb2.build());
     }
