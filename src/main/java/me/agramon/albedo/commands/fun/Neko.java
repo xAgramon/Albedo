@@ -2,7 +2,6 @@ package me.agramon.albedo.commands.fun;
 
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
-import me.agramon.albedo.api.PurrBotAPI;
 import me.duncte123.botcommons.messaging.EmbedUtils;
 import me.duncte123.botcommons.web.WebUtils;
 import net.dv8tion.jda.api.entities.MessageEmbed;

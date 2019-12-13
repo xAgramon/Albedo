@@ -37,14 +37,14 @@ public class Help extends Command {
 
                 .addField(":video_game: Fun :video_game:",
                         "• albedo <gif> \n" +
+                                "• baka \n" +
                                 "• bowsette \n" +
                                 "• e926 \n" +
                                 "• horns \n" +
                                 "• kitsune \n" +
                                 "• neko \n" +
                                 "• paste <message> \n" +
-                                "• safebooru \n" +
-                                "• search <board> <tag> \n"
+                                "• safebooru \n"
                         , true)
 
                 .addField(":moneybag: Economy :moneybag:",
@@ -63,12 +63,24 @@ public class Help extends Command {
                         , true)
 
                 .addField(":underage: NSFW :underage:",
-                        "• danbooru \n" +
+                        "• anal \n" +
+                                "• blowjob <gif> \n" +
+                                "• boobs \n" +
+                                "• cum \n" +
+                                "• danbooru \n" +
                                 "• e621 \n" +
+                                "• feet \n" +
+                                "• femdom \n" +
                                 "• gelbooru \n" +
+                                "• hentai <gif> \n" +
+                                "• kitsune \n" +
                                 "• konochan \n" +
                                 "• neko \n" +
+                                "• pussy \n" +
                                 "• rule34 \n" +
+                                "• solo <gif>\n" +
+                                "• trap \n" +
+                                "• vanilla \n" +
                                 "• yandere \n"
                         , true)
 

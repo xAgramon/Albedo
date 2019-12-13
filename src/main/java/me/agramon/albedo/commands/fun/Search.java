@@ -14,7 +14,7 @@ import java.awt.*;
 public class Search extends Command {
     public Search () {
         super.name = "search";
-        super.help = "Searches for a image with specific imageboard and tag";
+        super.hidden = true;
         super.cooldown = 5;
         super.category = new Category("Fun");
         super.aliases = new String[]{"s"};
@@ -25,7 +25,7 @@ public class Search extends Command {
         String temp = e.getArgs();
         String [] args = temp.split("\\s+");
 
-        if (temp == "" || args.length != 2) {
+        if (temp.isEmpty() || args.length != 2) {
             e.reply("Invalid arguments! The correct usage is >s <imageboard> <tag>");
             return;
         }

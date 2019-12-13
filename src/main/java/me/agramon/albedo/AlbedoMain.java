@@ -2,10 +2,7 @@ package me.agramon.albedo;
 
 import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
-import me.agramon.albedo.commands.administration.AddUsers;
-import me.agramon.albedo.commands.administration.ChatClear;
-import me.agramon.albedo.commands.administration.SetAdores;
-import me.agramon.albedo.commands.administration.SetCredits;
+import me.agramon.albedo.commands.administration.*;
 import me.agramon.albedo.commands.economy.*;
 import me.agramon.albedo.commands.fun.*;
 import me.agramon.albedo.commands.info.*;
@@ -39,17 +36,19 @@ public class AlbedoMain {
         builder.addCommand(new Uptime());
 
         builder.addCommand(new Albedo());
+        builder.addCommand(new Baka());
         builder.addCommand(new Bowsette());
         builder.addCommand(new E926());
         builder.addCommand(new Horns());
         builder.addCommand(new Kitsune());
-        builder.addCommand(new me.agramon.albedo.commands.fun.Neko());
+        builder.addCommand(new Neko());
         builder.addCommand(new Paste());
         builder.addCommand(new Safebooru());
         builder.addCommand(new Search());
 
         builder.addCommand(new Balance());
         builder.addCommand(new Daily());
+        builder.addCommand(new Leaderboard());
 
         builder.addCommand(new Cuddle());
         builder.addCommand(new Kiss());
@@ -59,11 +58,22 @@ public class AlbedoMain {
         builder.addCommand(new Slap());
         builder.addCommand(new Tickle());
 
+        builder.addCommand(new Anal());
+        builder.addCommand(new Blowjob());
+        builder.addCommand(new Boobs());
+        builder.addCommand(new Cum());
         builder.addCommand(new Danbooru());
         builder.addCommand(new E621());
+        builder.addCommand(new Feet());
+        builder.addCommand(new Femdom());
         builder.addCommand(new Gelbooru());
+        builder.addCommand(new Hentai());
         builder.addCommand(new Konochan());
+        builder.addCommand(new Pussy());
         builder.addCommand(new Rule34());
+        builder.addCommand(new Solo());
+        builder.addCommand(new Trap());
+        builder.addCommand(new Vanilla());
         builder.addCommand(new Yandere());
 
         builder.addCommand(new AddUsers());

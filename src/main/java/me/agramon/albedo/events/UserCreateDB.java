@@ -24,7 +24,7 @@ public class UserCreateDB extends ListenerAdapter {
         collection.insertOne(user);
     }
 
-    public void onGuildMemberLeave(GuildMemberLeaveEvent e) {
+    public void onGuildMemberLeave(GuildMemberLeaveEvent e) { // Error
         String URI = Config.getURI("URI");
         MongoClient mc = MongoClients.create(URI);
         MongoDatabase mb = mc.getDatabase("Albedo");

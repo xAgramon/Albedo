@@ -1,4 +1,4 @@
-package me.agramon.albedo.commands.fun;
+package me.agramon.albedo.commands.nsfw;
 
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
@@ -14,24 +14,31 @@ import java.awt.*;
 import java.io.IOException;
 import java.util.Objects;
 
-public class Kitsune extends Command {
+public class Hentai extends Command {
 
     private static final OkHttpClient client = new OkHttpClient();
 
-    public Kitsune() {
-        super.name = "kitsune";
-        super.help = "Fox girls <3";
+    public Hentai() {
+        super.name = "hentai";
+        super.help = "Random image of hentai ( ͡° ͜ʖ ͡°)";
         super.cooldown = 5;
-        super.category = new Category("Fun");
+        super.category = new Category("NSFW");
     }
 
+    @Override
     protected void execute(CommandEvent e) {
-        String url;
-        if (e.getMessage().getTextChannel().isNSFW()) {
-            url = "https://nekos.life/api/v2/img/lewdk";
-        } else {
-            url = "https://nekos.life/api/v2/img/kemonomimi";
+        if (!e.getMessage().getTextChannel().isNSFW()) {
+            e.reply("This is not a NSFW channel!");
+            return;
         }
+
+        String url;
+        if (e.getArgs().equalsIgnoreCase("gif")) {
+            url = "https://nekos.life/api/v2/img/Random_hentai_gif";
+        } else {
+            url = "https://nekos.life/api/v2/img/hentai";
+        }
+
         String image = null;
 
         Request request = new Request.Builder().url(url).build();
@@ -61,4 +68,3 @@ public class Kitsune extends Command {
         e.reply(embed);
     }
 }
-
