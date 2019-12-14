@@ -42,7 +42,7 @@ public class Help extends Command {
                                 "• e926 \n" +
                                 "• horns \n" +
                                 "• kitsune \n" +
-                                "• neko \n" +
+                                "• neko <gif> \n" +
                                 "• paste <message> \n" +
                                 "• safebooru \n"
                         , true)
@@ -75,7 +75,7 @@ public class Help extends Command {
                                 "• hentai <gif> \n" +
                                 "• kitsune \n" +
                                 "• konochan \n" +
-                                "• neko \n" +
+                                "• neko <gif> \n" +
                                 "• pussy \n" +
                                 "• rule34 \n" +
                                 "• solo <gif>\n" +

@@ -17,17 +17,25 @@ public class Neko extends Command {
     }
 
     protected void execute(CommandEvent e) {
-        String api;
+        String url;
         if (e.getMessage().getTextChannel().isNSFW()) {
-            api = "/nsfw/neko/img";
+            if (e.getArgs().equalsIgnoreCase("gif")) {
+                url = "https://nekos.life/api/v2/img/nsfw_neko_gif";
+            } else {
+                url = "https://nekos.life/api/v2/img/lewd";
+            }
         } else {
-            api = "/sfw/neko/img";
+            if (e.getArgs().equalsIgnoreCase("gif")) {
+                url = "https://nekos.life/api/v2/img/ngif";
+            } else {
+                url = "https://nekos.life/api/v2/img/neko";
+            }
         }
 
-        WebUtils.ins.getJSONObject("https://purrbot.site/api/img" + api).async((json) -> {
-            String url = json.get("link").asText();
+        WebUtils.ins.getJSONObject(url).async((json) -> {
+            String image = json.get("url").asText();
             MessageEmbed embed;
-            embed = EmbedUtils.embedImage(url)
+            embed = EmbedUtils.embedImage(image)
                 .setColor(Color.MAGENTA)
                 .build();
             e.reply(embed);

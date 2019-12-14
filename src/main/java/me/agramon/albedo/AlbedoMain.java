@@ -73,7 +73,6 @@ public class AlbedoMain {
         builder.addCommand(new Rule34());
         builder.addCommand(new Solo());
         builder.addCommand(new Trap());
-        builder.addCommand(new Vanilla());
         builder.addCommand(new Yandere());
 
         builder.addCommand(new AddUsers());
