@@ -11,6 +11,7 @@ import org.bson.Document;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 public class Leaderboard extends Command {
@@ -21,10 +22,6 @@ public class Leaderboard extends Command {
         super.aliases = new String[]{"lb"};
         super.help = "The top weebs of the server";
     }
-
-    public List<String> name = new ArrayList<>();
-    public List<Integer> adores = new ArrayList<>();
-    public List<Integer> credits = new ArrayList<>();
 
     @Override
     protected void execute(CommandEvent e) {
@@ -42,12 +39,12 @@ public class Leaderboard extends Command {
         FindIterable<Document> fi = collection.find();
         MongoCursor<Document> cursor = fi.iterator();
 
+        List<Document> list = new ArrayList<>();
+        
         try {
             while (cursor.hasNext()) {
                 Document document = cursor.next();
-                name.add(document.get("UserID").toString());
-                adores.add((Integer) document.get("Adores"));
-                credits.add((Integer) document.get("Credits"));
+                list.add(document);
             }
         } finally {
             cursor.close();
@@ -55,30 +52,53 @@ public class Leaderboard extends Command {
 
         int index;
         if (e.getArgs().equalsIgnoreCase("adores")) {
-            index = adores.indexOf(Collections.max(adores));
 
-            User user = e.getJDA().getUserById(name.get(index));
+            Collections.sort(list, compareByAdores.reversed());
+
             EmbedBuilder eb = new EmbedBuilder()
                     .setColor(Color.MAGENTA)
-                    .setThumbnail(user.getAvatarUrl())
-                    .setTitle("Top Artist - " + user.getName())
-                    .setDescription(user.getName() + " has the most amount of adores on the server with **" + adores.get(index) + "** adores!");
+                    .setTitle("Top Artists 🎨")
+                    .setThumbnail(e.getJDA().getUserById(list.get(0).get("UserID").toString()).getAvatarUrl());
+
+            for (int i = 0; i < 10; i++) {
+                User user = e.getJDA().getUserById(list.get(i).get("UserID").toString());
+                eb.addField("", "**" + (i+1) + ".** " + user.getAsTag() + " - ``" + list.get(i).get("Adores") + "``", false);
+            }
+
             e.reply(eb.build());
 
         } else if (e.getArgs().equalsIgnoreCase("credits")) {
-            index = credits.indexOf(Collections.max(credits));
 
-            User user = e.getJDA().getUserById(name.get(index));
+            Collections.sort(list, compareByCredits.reversed());
+
             EmbedBuilder eb = new EmbedBuilder()
                     .setColor(Color.MAGENTA)
-                    .setThumbnail(user.getAvatarUrl())
-                    .setTitle("Richest Weeb - " + user.getName())
-                    .setDescription(user.getName() + " has the most amount of credits on the server with **" + credits.get(index) + "** credits!");
+                    .setTitle("Richest Weebs 💰")
+                    .setThumbnail(e.getJDA().getUserById(list.get(0).get("UserID").toString()).getAvatarUrl());
+
+            for (int i = 0; i < 10; i++) {
+                User user = e.getJDA().getUserById(list.get(i).get("UserID").toString());
+                eb.addField("", "**" + (i+1) + ".** " + user.getAsTag() + " - ``" + list.get(i).get("Credits") + "``", false);
+            }
+
             e.reply(eb.build());
 
         } else {
             e.reply("That is not a valid category! Please try >lb <adores/credits>");
         }
-
     }
+
+    Comparator<Document> compareByAdores = new Comparator<Document>() {
+        @Override
+        public int compare(Document o1, Document o2) {
+            return ((Integer)o1.get("Adores")).compareTo((Integer)(o2.get("Adores")));
+        }
+    };
+
+    Comparator<Document> compareByCredits = new Comparator<Document>() {
+        @Override
+        public int compare(Document o1, Document o2) {
+            return ((Integer)o1.get("Credits")).compareTo((Integer)(o2.get("Credits")));
+        }
+    };
 }

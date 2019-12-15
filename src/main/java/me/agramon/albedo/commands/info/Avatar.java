@@ -16,14 +16,18 @@ public class Avatar extends Command {
 
     @Override
     protected void execute(CommandEvent e) {
-        if (e.getMessage().getMentionedMembers().get(0) == null) {
-            e.reply("Please give a user to get the avatar from!");
-            return;
-        }
         EmbedBuilder eb = new EmbedBuilder()
-                .setColor(Color.MAGENTA)
-                .setTitle(e.getMessage().getMentionedMembers().get(0).getUser().getName() + "'s Avatar")
-                .setImage(e.getMessage().getMentionedMembers().get(0).getUser().getAvatarUrl());
+                .setColor(Color.MAGENTA);
+        if (e.getMessage().getMentionedMembers().size() != 0) {
+            eb.setTitle(e.getMessage().getMentionedMembers().get(0).getUser().getName() + "'s Avatar");
+            eb.setImage(e.getMessage().getMentionedMembers().get(0).getUser().getAvatarUrl());
+        } else if (!e.getArgs().isEmpty() && e.getJDA().getUserById(e.getArgs()) != null) {
+            eb.setTitle(e.getJDA().getUserById(e.getArgs()).getName() + "'s Avatar");
+            eb.setImage(e.getJDA().getUserById(e.getArgs()).getAvatarUrl());
+        } else {
+            eb.setTitle(e.getMessage().getMember().getUser().getName() + "'s Avatar");
+            eb.setImage(e.getMessage().getMember().getUser().getAvatarUrl());
+        }
         e.reply(eb.build());
     }
 }

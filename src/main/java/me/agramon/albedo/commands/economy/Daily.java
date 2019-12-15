@@ -7,7 +7,10 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import me.agramon.albedo.Config;
+import net.dv8tion.jda.api.EmbedBuilder;
 import org.bson.Document;
+
+import java.awt.*;
 
 public class Daily extends Command {
     public Daily() {
@@ -23,10 +26,10 @@ public class Daily extends Command {
         long numberOfMinutes = (seconds / 60) - (numberOfHours * 60);
         long numberOfSeconds = seconds % 60;
 
-        e.getChannel().sendMessageFormat(
-                "You can claim your daily again in `%s hours, %s minutes, %s seconds`",
-                numberOfHours, numberOfMinutes, numberOfSeconds
-        ).queue();
+        EmbedBuilder eb = new EmbedBuilder()
+                .setDescription("You can claim your daily again in ``" + numberOfHours + " hours, " + numberOfMinutes + " minutes, " + numberOfSeconds + " seconds``")
+                .setColor(Color.MAGENTA);
+        e.reply(eb.build());
         return "";
     }
 
@@ -50,6 +53,10 @@ public class Daily extends Command {
         Document update = new Document();
         update.append("$set", setData);
         collection.updateOne(query, update);
-        e.reply("```You now have " + newCredits + " credits!```");
+
+        EmbedBuilder eb = new EmbedBuilder()
+                .setDescription("You now have " + newCredits + " credits!")
+                .setColor(Color.MAGENTA);
+        e.reply(eb.build());
     }
 }

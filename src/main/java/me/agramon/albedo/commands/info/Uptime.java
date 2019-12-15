@@ -2,7 +2,9 @@ package me.agramon.albedo.commands.info;
 
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
+import net.dv8tion.jda.api.EmbedBuilder;
 
+import java.awt.*;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
 
@@ -23,9 +25,10 @@ public class Uptime extends Command {
         long numberOfMinutes = (uptimeInSeconds / 60) - (numberOfHours * 60);
         long numberOfSeconds = uptimeInSeconds % 60;
 
-        e.getChannel().sendMessageFormat(
-                "My uptime is `%s hours, %s minutes, %s seconds`",
-                numberOfHours, numberOfMinutes, numberOfSeconds
-        ).queue();
+        EmbedBuilder eb = new EmbedBuilder()
+                .setColor(Color.MAGENTA)
+                .setDescription("You can claim your daily again in ``" + numberOfHours + " hours, " + numberOfMinutes + " minutes, " + numberOfSeconds + " seconds``");
+
+        e.reply(eb.build());
     }
 }
