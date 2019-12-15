@@ -6,8 +6,6 @@ import me.duncte123.botcommons.messaging.EmbedUtils;
 import net.dv8tion.jda.api.entities.MessageEmbed;
 import net.kodehawa.lib.imageboards.DefaultImageBoards;
 import net.kodehawa.lib.imageboards.entities.BoardImage;
-import net.kodehawa.lib.imageboards.entities.exceptions.QueryFailedException;
-import net.kodehawa.lib.imageboards.entities.exceptions.QueryParseException;
 
 import java.awt.*;
 

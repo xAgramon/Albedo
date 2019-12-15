@@ -6,7 +6,6 @@ import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Guild;
 
 import java.awt.*;
-import java.time.format.DateTimeFormatter;
 
 public class Help extends Command {
     public Help() {
@@ -92,9 +91,12 @@ public class Help extends Command {
 
                 .addField(":pencil: Administration :pencil:",
                         "• addusers \n" +
+                                "• ban <user> <reason> \n" +
                                 "• chatclear <#> \n" +
+                                "• kick <user> <reason> \n" +
                                 "• setadores <user> <#> \n" +
-                                "• setcredits <user> <#> \n"
+                                "• setcredits <user> <#> \n" +
+                                "• unban <user> \n"
                         , true);
 
         e.reply(eb.build());

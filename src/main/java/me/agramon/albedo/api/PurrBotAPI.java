@@ -16,15 +16,6 @@ public class PurrBotAPI extends Command {
     public String api;
     public String title;
 
-    public PurrBotAPI (String name, String help, int cooldown, String api) {
-        super.name = name;
-        super.help = help;
-        super.cooldown = cooldown;
-        super.category = new Category("Fun");
-        this.api = api;
-    }
-
-    // Roleplay Constructor
     public PurrBotAPI (String name, String help, int cooldown, String api, String title) {
         super.name = name;
         super.help = help;
@@ -39,12 +30,12 @@ public class PurrBotAPI extends Command {
         WebUtils.ins.getJSONObject("https://purrbot.site/api/img" + api).async((json) -> {
             String url = json.get("link").asText();
             MessageEmbed embed;
-            if (e.getArgs() != "" && e.getMessage().getMentionedMembers().get(0).getUser() == e.getSelfUser()) {
+            if (!e.getArgs().isEmpty() && e.getMessage().getMentionedMembers().get(0).getUser() == e.getSelfUser()) {
                 embed = EmbedUtils.embedImage(url)
                         .setColor(Color.MAGENTA)
                         .setTitle(e.getMessage().getMentionedMembers().get(0).getUser().getName() + " loves you too " + e.getMessage().getAuthor().getName() + "!")
                         .build();
-            } else if (e.getArgs() != "" && e.getMessage().getMentionedMembers().get(0) != null) {
+            } else if (!e.getArgs().isEmpty() && e.getMessage().getMentionedMembers().get(0) != null) {
                 embed = EmbedUtils.embedImage(url)
                         .setColor(Color.MAGENTA)
                         .setTitle(e.getMessage().getAuthor().getName() + " " + title + " " + e.getMessage().getMentionedMembers().get(0).getUser().getName())

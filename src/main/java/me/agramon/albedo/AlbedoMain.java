@@ -80,9 +80,12 @@ public class AlbedoMain {
         builder.addCommand(new Yuri());
 
         builder.addCommand(new AddUsers());
+        builder.addCommand(new Ban());
         builder.addCommand(new ChatClear());
+        builder.addCommand(new Kick());
         builder.addCommand(new SetAdores());
         builder.addCommand(new SetCredits());
+        builder.addCommand(new Unban());
 
         CommandClient client = builder.build();
 
@@ -93,7 +96,6 @@ public class AlbedoMain {
     }
 
     public static void main(String args[]) throws LoginException {
-        long enable = System.currentTimeMillis();
         new AlbedoMain();
     }
 }
