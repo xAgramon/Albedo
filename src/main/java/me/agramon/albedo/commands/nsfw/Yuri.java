@@ -8,12 +8,12 @@ import net.dv8tion.jda.api.entities.MessageEmbed;
 
 import java.awt.*;
 
-public class Solo extends Command {
-    public Solo() {
-        super.name = "solo";
-        super.help = "I love myself";
-        super.cooldown = 5;
+public class Yuri extends Command {
+    public Yuri() {
+        super.name = "yuri";
+        super.help = "On girl on girl action ;)";
         super.category = new Category("NSFW");
+        super.cooldown = 5;
     }
 
     @Override
@@ -24,14 +24,10 @@ public class Solo extends Command {
         }
 
         String url;
-        if (e.getArgs().equalsIgnoreCase("gif")) {
-            if ((int)(Math.random() * 2) == 1) {
-                url = "https://nekos.life/api/v2/img/solog";
-            } else {
-                url = "https://nekos.life/api/v2/img/pwankg";
-            }
+        if ((int)(Math.random() * 2) == 1) {
+            url = "https://nekos.life/api/v2/img/yuri";
         } else {
-            url = "https://nekos.life/api/v2/img/solo";
+            url = "https://nekos.life/api/v2/img/eroyuri";
         }
 
         WebUtils.ins.getJSONObject(url).async((json) -> {

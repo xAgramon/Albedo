@@ -40,11 +40,13 @@ public class AlbedoMain {
         builder.addCommand(new Bowsette());
         builder.addCommand(new E926());
         builder.addCommand(new Horns());
+        builder.addCommand(new Kemonomimi());
         builder.addCommand(new Kitsune());
         builder.addCommand(new Neko());
         builder.addCommand(new Paste());
         builder.addCommand(new Safebooru());
         builder.addCommand(new Search());
+        builder.addCommand(new Smug());
 
         builder.addCommand(new Balance());
         builder.addCommand(new Daily());
@@ -69,11 +71,13 @@ public class AlbedoMain {
         builder.addCommand(new Gelbooru());
         builder.addCommand(new Hentai());
         builder.addCommand(new Konochan());
+        builder.addCommand(new Lewd());
         builder.addCommand(new Pussy());
         builder.addCommand(new Rule34());
         builder.addCommand(new Solo());
         builder.addCommand(new Trap());
         builder.addCommand(new Yandere());
+        builder.addCommand(new Yuri());
 
         builder.addCommand(new AddUsers());
         builder.addCommand(new ChatClear());

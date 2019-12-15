@@ -20,13 +20,13 @@ public class Feet extends Command {
     protected void execute(CommandEvent e) {
         String url;
 
-        int random = (int) (Math.random() * 3);
+        int random = (int) (Math.random() * 2);
 
         if (e.getMessage().getTextChannel().isNSFW()) {
-            if (random == 1) {
+            if (e.getArgs().equalsIgnoreCase("gif")) {
+                url = "https://neko.life/api/v2/img/feetg";
+            } else if (random == 1) {
                 url = "https://nekos.life/api/v2/img/erofeet";
-            } else if (random == 2) {
-                url = "https://nekos.life/api/v2/img/feet";
             } else {
                 url = "https://nekos.life/api/v2/img/feet";
             }

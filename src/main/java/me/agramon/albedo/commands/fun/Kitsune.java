@@ -20,9 +20,9 @@ public class Kitsune extends Command {
     protected void execute(CommandEvent e) {
         String url;
         if (e.getMessage().getTextChannel().isNSFW()) {
-            url = "https://nekos.life/api/v2/img/lewdkemo";
+            url = "https://nekos.life/api/v2/img/erok";
         } else {
-            url = "https://nekos.life/api/v2/img/kemonomimi";
+            url = "https://nekos.life/api/v2/img/fox_girl";
         }
 
         WebUtils.ins.getJSONObject(url).async((json) -> {

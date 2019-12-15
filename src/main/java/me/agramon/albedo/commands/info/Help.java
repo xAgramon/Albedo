@@ -41,15 +41,18 @@ public class Help extends Command {
                                 "• bowsette \n" +
                                 "• e926 \n" +
                                 "• horns \n" +
+                                "• kemonomimi \n" +
                                 "• kitsune \n" +
                                 "• neko <gif> \n" +
                                 "• paste <message> \n" +
-                                "• safebooru \n"
+                                "• safebooru \n" +
+                                "• smug \n"
                         , true)
 
                 .addField(":moneybag: Economy :moneybag:",
                         "• balance <user> \n" +
-                                "• daily \n"
+                                "• daily \n" +
+                                "• leaderboard <category> \n"
                         , true)
 
                 .addField(":performing_arts: Roleplay :performing_arts:",
@@ -73,15 +76,18 @@ public class Help extends Command {
                                 "• femdom \n" +
                                 "• gelbooru \n" +
                                 "• hentai <gif> \n" +
+                                "• kemonomimi \n" +
                                 "• kitsune \n" +
                                 "• konochan \n" +
+                                "• lewd \n" +
                                 "• neko <gif> \n" +
                                 "• pussy \n" +
                                 "• rule34 \n" +
                                 "• solo <gif>\n" +
                                 "• trap \n" +
                                 "• vanilla \n" +
-                                "• yandere \n"
+                                "• yandere \n" +
+                                "• yuri \n"
                         , true)
 
                 .addField(":pencil: Administration :pencil:",
@@ -93,6 +99,7 @@ public class Help extends Command {
 
         e.reply(eb.build());
 
+        /*
         EmbedBuilder eb2 = new EmbedBuilder()
                 .setColor(Color.MAGENTA)
                 .setTitle("Features")
@@ -103,5 +110,6 @@ public class Help extends Command {
                                 "➢ Economy system with credits (shop soon to come!) \n"
                         , true);
         e.reply(eb2.build());
+        */
     }
 }

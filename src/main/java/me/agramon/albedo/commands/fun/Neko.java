@@ -22,7 +22,11 @@ public class Neko extends Command {
             if (e.getArgs().equalsIgnoreCase("gif")) {
                 url = "https://nekos.life/api/v2/img/nsfw_neko_gif";
             } else {
-                url = "https://nekos.life/api/v2/img/lewd";
+                if ((int)(Math.random() * 2) == 1) {
+                    url = "https://nekos.life/api/v2/img/lewd";
+                } else {
+                    url = "https://nekos.life/api/v2/img/eron";
+                }
             }
         } else {
             if (e.getArgs().equalsIgnoreCase("gif")) {

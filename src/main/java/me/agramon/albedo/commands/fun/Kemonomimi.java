@@ -1,4 +1,4 @@
-package me.agramon.albedo.commands.nsfw;
+package me.agramon.albedo.commands.fun;
 
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
@@ -8,30 +8,26 @@ import net.dv8tion.jda.api.entities.MessageEmbed;
 
 import java.awt.*;
 
-public class Solo extends Command {
-    public Solo() {
-        super.name = "solo";
-        super.help = "I love myself";
+public class Kemonomimi extends Command {
+    public Kemonomimi() {
+        super.name = "kemonomimi";
+        super.aliases = new String[]{"kemo", "kemono"};
+        super.help = "Cute animal-eared girls <3";
         super.cooldown = 5;
-        super.category = new Category("NSFW");
+        super.category = new Category("Fun");
     }
 
     @Override
     protected void execute(CommandEvent e) {
-        if (!e.getMessage().getTextChannel().isNSFW()) {
-            e.reply("This is not a NSFW channel!");
-            return;
-        }
-
         String url;
-        if (e.getArgs().equalsIgnoreCase("gif")) {
+        if (e.getMessage().getTextChannel().isNSFW()) {
             if ((int)(Math.random() * 2) == 1) {
-                url = "https://nekos.life/api/v2/img/solog";
+                url = "https://nekos.life/api/v2/img/lewdkemo";
             } else {
-                url = "https://nekos.life/api/v2/img/pwankg";
+                url = "https://nekos.life/api/v2/img/erokemo";
             }
         } else {
-            url = "https://nekos.life/api/v2/img/solo";
+            url = "https://nekos.life/api/v2/img/kemonomimi";
         }
 
         WebUtils.ins.getJSONObject(url).async((json) -> {

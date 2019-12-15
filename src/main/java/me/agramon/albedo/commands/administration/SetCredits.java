@@ -50,9 +50,9 @@ public class SetCredits extends Command {
             Document update = new Document();
             update.append("$set", setData);
             collection.updateOne(query, update);
-            e.reply("User now has " + args[1] + " credits!");
+            e.reply(e.getJDA().getUserById(user).getName() + " now has " + args[1] + " credits!");
         } else {
-            e.reply("Error! User not in database!");
+            e.reply("Error! " + e.getJDA().getUserById(user).getName() + " is not in the database!");
         }
     }
 }
