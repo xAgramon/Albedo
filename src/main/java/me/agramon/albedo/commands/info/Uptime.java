@@ -27,7 +27,7 @@ public class Uptime extends Command {
 
         EmbedBuilder eb = new EmbedBuilder()
                 .setColor(Color.MAGENTA)
-                .setDescription("You can claim your daily again in ``" + numberOfHours + " hours, " + numberOfMinutes + " minutes, " + numberOfSeconds + " seconds``");
+                .setDescription("Albedo has been up for ``" + numberOfHours + " hours, " + numberOfMinutes + " minutes, " + numberOfSeconds + " seconds``");
 
         e.reply(eb.build());
     }
