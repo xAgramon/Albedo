@@ -42,6 +42,7 @@ public class AlbedoMain {
         builder.addCommand(new Horns());
         builder.addCommand(new Kemonomimi());
         builder.addCommand(new Kitsune());
+        builder.addCommand(new Moescape());
         builder.addCommand(new Neko());
         builder.addCommand(new Paste());
         builder.addCommand(new Safebooru());
@@ -80,12 +81,9 @@ public class AlbedoMain {
         builder.addCommand(new Yuri());
 
         builder.addCommand(new AddUsers());
-        builder.addCommand(new Ban());
         builder.addCommand(new ChatClear());
-        builder.addCommand(new Kick());
         builder.addCommand(new SetAdores());
         builder.addCommand(new SetCredits());
-        builder.addCommand(new Unban());
 
         CommandClient client = builder.build();
 

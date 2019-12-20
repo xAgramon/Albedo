@@ -91,12 +91,9 @@ public class Help extends Command {
 
                 .addField(":pencil: Administration :pencil:",
                         "• addusers \n" +
-                                "• ban <user> <reason> \n" +
                                 "• chatclear <#> \n" +
-                                "• kick <user> <reason> \n" +
                                 "• setadores <user> <#> \n" +
-                                "• setcredits <user> <#> \n" +
-                                "• unban <user> \n"
+                                "• setcredits <user> <#> \n"
                         , true);
 
         e.reply(eb.build());

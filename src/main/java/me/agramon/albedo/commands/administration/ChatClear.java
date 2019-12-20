@@ -65,7 +65,7 @@ public class ChatClear extends Command {
                 })
                 .whenCompleteAsync(
                         (count, thr) -> channel.sendMessageFormat("I have purged `%d` messages!!", count).queue(
-                                (message) -> message.delete().queueAfter(3, TimeUnit.SECONDS)
+                                (message) -> message.delete().queueAfter(2, TimeUnit.SECONDS)
                         )
                 )
                 .exceptionally((thr) -> {
