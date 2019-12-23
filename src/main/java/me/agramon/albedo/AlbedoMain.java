@@ -8,8 +8,7 @@ import me.agramon.albedo.commands.fun.*;
 import me.agramon.albedo.commands.info.*;
 import me.agramon.albedo.commands.nsfw.*;
 import me.agramon.albedo.commands.roleplay.*;
-import me.agramon.albedo.events.ArtReaction;
-import me.agramon.albedo.events.UserCreateDB;
+import me.agramon.albedo.events.*;
 import net.dv8tion.jda.api.AccountType;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
@@ -50,7 +49,9 @@ public class AlbedoMain {
         builder.addCommand(new Smug());
 
         builder.addCommand(new Balance());
+        builder.addCommand(new Buy());
         builder.addCommand(new Daily());
+        builder.addCommand(new Shop());
         builder.addCommand(new Leaderboard());
 
         builder.addCommand(new Cuddle());
@@ -80,7 +81,7 @@ public class AlbedoMain {
         builder.addCommand(new Yandere());
         builder.addCommand(new Yuri());
 
-        builder.addCommand(new AddUsers());
+        builder.addCommand(new UpdateUsers());
         builder.addCommand(new ChatClear());
         builder.addCommand(new SetAdores());
         builder.addCommand(new SetCredits());
@@ -89,6 +90,7 @@ public class AlbedoMain {
 
         jda.addEventListener(client);
         jda.addEventListener(new ArtReaction());
+        jda.addEventListener(new Credits());
         jda.addEventListener(new Log());
         jda.addEventListener(new UserCreateDB());
     }

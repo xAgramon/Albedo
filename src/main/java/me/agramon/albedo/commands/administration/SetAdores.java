@@ -29,7 +29,7 @@ public class SetAdores extends Command {
 
 
         if (temp.isEmpty() || args.length != 2) {
-            e.reply("Invalid arguments! The correct usage is >s <user> <# of adores>");
+            e.reply("Invalid arguments! The correct usage is >setadores <user> <# of adores>");
             return;
         }
 

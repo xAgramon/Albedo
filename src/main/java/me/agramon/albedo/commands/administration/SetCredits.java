@@ -29,7 +29,7 @@ public class SetCredits extends Command {
 
 
         if (temp.isEmpty() || args.length != 2) {
-            e.reply("Invalid arguments! The correct usage is >s <user> <# of credits>");
+            e.reply("Invalid arguments! The correct usage is >setcredits <user> <# of credits>");
             return;
         }
 

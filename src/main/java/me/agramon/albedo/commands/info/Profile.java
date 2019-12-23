@@ -51,7 +51,7 @@ public class Profile extends Command {
             adores = found.get("Adores") + "";
             credits = found.get("Credits") + "";
         } else {
-            e.reply("You are current not in the database. Please contact an administrator");
+            e.reply("You are current not in the database. Please contact an administrator!");
             return;
         }
 

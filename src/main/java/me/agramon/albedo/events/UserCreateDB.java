@@ -21,6 +21,8 @@ public class UserCreateDB extends ListenerAdapter {
         user.append("UserID", e.getMember().getId());
         user.append("Adores", 0);
         user.append("Credits", 0);
+        user.append("XP", 0);
+        user.append("Level", 0);
         collection.insertOne(user);
     }
 
