@@ -61,7 +61,6 @@ public class UpdateUsers extends Command {
                     setData.append("Credits", 0);
                     toUpdate = true;
                 }
-
                 if (toUpdate) {
                     Document update = new Document();
                     update.append("$set", setData);

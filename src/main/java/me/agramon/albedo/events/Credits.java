@@ -22,7 +22,7 @@ public class Credits extends ListenerAdapter {
         MongoDatabase mb = mc.getDatabase("Albedo");
         MongoCollection<Document> collection = mb.getCollection("Anime Argonauts");
 
-        User user = e.getAuthor();
+        User user = e.getMessage().getAuthor();
 
         Document found = collection.find(new Document("UserID", user.getId())).first();
         if (found != null) {
@@ -30,9 +30,7 @@ public class Credits extends ListenerAdapter {
             query.append("UserID", found.get("UserID"));
 
             Document setData = new Document();
-            int oldCredits = (Integer) (found.get("XP"));
-            int randomCredits = (int) (Math.random() * 10);
-            setData.append("Credits", oldCredits + randomCredits);
+            setData.append("Credits", ((Integer)(found.get("Credits"))) + ((int) (Math.random() * 5)));
 
             Document update = new Document();
             update.append("$set", setData);

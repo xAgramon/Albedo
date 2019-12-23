@@ -7,8 +7,11 @@ import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
 import com.mongodb.client.MongoDatabase;
 import me.agramon.albedo.Config;
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.Member;
 import org.bson.Document;
+
+import java.awt.*;
 
 public class Balance extends Command {
     public Balance() {
@@ -41,6 +44,9 @@ public class Balance extends Command {
 
         int credits = (Integer) found.get("Credits");
 
-        e.reply("```" + name.getUser().getName() + " has " + credits + " credits!```");
+        EmbedBuilder eb = new EmbedBuilder()
+                .setColor(Color.MAGENTA)
+                .setDescription(name.getUser().getName() + " has " + credits + " credits!");
+        e.reply(eb.build());
     }
 }
