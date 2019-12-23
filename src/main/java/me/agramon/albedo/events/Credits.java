@@ -13,7 +13,7 @@ import org.bson.Document;
 public class Credits extends ListenerAdapter {
 
     public void onGuildMessageReceived(GuildMessageReceivedEvent e) {
-        if (e.getAuthor().isBot() || e.getMessage().getContentRaw().charAt(0) == '>') {
+        if (e.getAuthor().isBot() || e.getMessage().getContentRaw().charAt(0) == '>' || e.getMessage().getContentRaw().charAt(0) == '!' || e.getMessage().getContentRaw().charAt(0) == '$') {
             return;
         }
 
