@@ -14,7 +14,8 @@ import org.bson.Document;
 public class Buy extends Command {
     public Buy() {
         super.name = "buy";
-        super.hidden = true;
+        super.help = "Buys an item in the shop";
+        super.category = new Category("Economy");
         super.cooldown = 5;
     }
 
@@ -55,7 +56,6 @@ public class Buy extends Command {
             } else {
                 e.reply("What a poor scum! You cannot afford that role!");
             }
-            return;
         } else if (e.getArgs().equalsIgnoreCase("Baka")) {
             if (e.getMember().getRoles().contains(baka)) {
                 e.reply("You already have that role you fool!");
@@ -68,7 +68,6 @@ public class Buy extends Command {
             } else {
                 e.reply("What a poor scum! You cannot afford that role!");
             }
-            return;
         } else if (e.getArgs().equalsIgnoreCase("Hentai")) {
             if (e.getMember().getRoles().contains(hentai)) {
                 e.reply("You already have that role you fool!");
@@ -81,7 +80,6 @@ public class Buy extends Command {
             } else {
                 e.reply("What a poor scum! You cannot afford that role!");
             }
-            return;
         } else if (e.getArgs().equalsIgnoreCase("Trap")) {
             if (e.getMember().getRoles().contains(trap)) {
                 e.reply("You already have that role you fool!");
@@ -94,7 +92,6 @@ public class Buy extends Command {
             } else {
                 e.reply("What a poor scum! You cannot afford that role!");
             }
-            return;
         } else if (e.getArgs().equalsIgnoreCase("Senpai")) {
             if (e.getMember().getRoles().contains(senpai)) {
                 e.reply("You already have that role you fool!");
@@ -107,7 +104,6 @@ public class Buy extends Command {
             } else {
                 e.reply("What a poor scum! You cannot afford that role!");
             }
-            return;
         } else if (e.getArgs().equalsIgnoreCase("Lewd")) {
             if (e.getMember().getRoles().contains(lewd)) {
                 e.reply("You already have that role you fool!");
@@ -120,7 +116,6 @@ public class Buy extends Command {
             } else {
                 e.reply("What a poor scum! You cannot afford that role!");
             }
-            return;
         } else if (e.getArgs().equalsIgnoreCase("No Bulli") || e.getArgs().equalsIgnoreCase("NoBulli")) {
             if (e.getMember().getRoles().contains(nobulli)) {
                 e.reply("You already have that role you fool!");
@@ -133,7 +128,6 @@ public class Buy extends Command {
             } else {
                 e.reply("What a poor scum! You cannot afford that role!");
             }
-            return;
         }
     }
 

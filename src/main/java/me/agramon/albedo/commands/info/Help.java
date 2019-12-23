@@ -50,6 +50,7 @@ public class Help extends Command {
 
                 .addField(":moneybag: Economy :moneybag:",
                         "• balance <user> \n" +
+                                "• buy <item> \n" +
                                 "• daily \n" +
                                 "• leaderboard <category> \n" +
                                 "• shop \n"
