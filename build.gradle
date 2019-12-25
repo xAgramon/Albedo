@@ -6,7 +6,7 @@ plugins {
 
 mainClassName = 'me.agramon.albedo.AlbedoMain'
 
-version '1.4.3'
+version '1.4.4'
 
 sourceCompatibility = 1.8
 

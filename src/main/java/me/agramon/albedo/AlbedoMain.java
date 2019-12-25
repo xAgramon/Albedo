@@ -81,16 +81,17 @@ public class AlbedoMain {
         builder.addCommand(new Yandere());
         builder.addCommand(new Yuri());
 
-        builder.addCommand(new UpdateUsers());
         builder.addCommand(new ChatClear());
+        builder.addCommand(new CreditsAll());
         builder.addCommand(new SetAdores());
         builder.addCommand(new SetCredits());
+        builder.addCommand(new UpdateUsers());
 
         CommandClient client = builder.build();
 
         jda.addEventListener(client);
         jda.addEventListener(new ArtReaction());
-        jda.addEventListener(new Credits());
+        //jda.addEventListener(new Credits());
         jda.addEventListener(new Log());
         jda.addEventListener(new UserCreateDB());
     }

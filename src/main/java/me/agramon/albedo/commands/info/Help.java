@@ -92,10 +92,11 @@ public class Help extends Command {
                         , true)
 
                 .addField(":pencil: Administration :pencil:",
-                        "• updateusers \n" +
-                                "• chatclear <#> \n" +
+                        "• chatclear <#> \n" +
+                                "• creditsall <#> \n" +
                                 "• setadores <user> <#> \n" +
-                                "• setcredits <user> <#> \n"
+                                "• setcredits <user> <#> \n" +
+                                "• updateusers \n"
                         , true);
 
         e.reply(eb.build());
