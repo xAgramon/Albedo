@@ -13,7 +13,7 @@ import org.bson.Document;
 public class SetAdores extends Command {
     public SetAdores() {
         super.name = "setadores";
-        super.help = "Sets a users adores!";
+        super.help = "Sets a users adores";
         super.category = new Category("Administration");
     }
 
@@ -29,7 +29,7 @@ public class SetAdores extends Command {
 
 
         if (temp.isEmpty() || args.length != 2) {
-            e.reply("Invalid arguments! The correct usage is >setadores <user> <# of adores>");
+            e.reply("The correct usage is >setadores <user> <# of adores>");
             return;
         }
 

@@ -27,7 +27,7 @@ public class Leaderboard extends Command {
     protected void execute(CommandEvent e) {
 
         if (e.getArgs().isEmpty()) {
-            e.reply("Invalid arguments! The correct usage is >lb <adores/credits>");
+            e.reply("The correct usage is >lb <adore>");
             return;
         }
 
@@ -67,7 +67,7 @@ public class Leaderboard extends Command {
 
             e.reply(eb.build());
 
-        } else if (e.getArgs().equalsIgnoreCase("credits")) {
+        } /*else if (e.getArgs().equalsIgnoreCase("credits")) {
 
             Collections.sort(list, compareByCredits.reversed());
 
@@ -83,7 +83,7 @@ public class Leaderboard extends Command {
 
             e.reply(eb.build());
 
-        } else {
+        } */else {
             e.reply("That is not a valid category! Please try >lb <adores/credits>");
         }
     }
@@ -95,10 +95,10 @@ public class Leaderboard extends Command {
         }
     };
 
-    Comparator<Document> compareByCredits = new Comparator<Document>() {
+    /*Comparator<Document> compareByCredits = new Comparator<Document>() {
         @Override
         public int compare(Document o1, Document o2) {
             return ((Integer)o1.get("Credits")).compareTo((Integer)(o2.get("Credits")));
         }
-    };
+    };*/
 }

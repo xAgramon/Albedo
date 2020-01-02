@@ -18,7 +18,7 @@ public class ChatClear extends Command {
         super.name = "chatclear";
         super.category = new Category("Administration");
         super.aliases = new String[]{"clear", "purge", "prune"};
-        super.help = "Clears chat";
+        super.help = "Clears message history";
     }
 
     @Override
@@ -38,7 +38,7 @@ public class ChatClear extends Command {
             return;
         }
 
-        if (args == "") {
+        if (args.isEmpty()) {
             e.reply("Please tell me many messages do you want to clear??");
         }
 
@@ -47,6 +47,11 @@ public class ChatClear extends Command {
             amount = Integer.parseInt(args);
         } catch (NumberFormatException ignored) {
             e.reply("Can't you tell the difference between a letter and a number?!");
+            return;
+        }
+
+        if (amount < 2) {
+            e.reply("Please enter a number greater than 2!");
             return;
         }
 

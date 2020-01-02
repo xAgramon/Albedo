@@ -17,7 +17,7 @@ import java.util.List;
 public class UpdateUsers extends Command {
     public UpdateUsers() {
         super.name = "updateusers";
-        super.help = "Adds all users to the MongoDB database";
+        super.help = "Adds all users to the database";
         super.category = new Category("Administration");
         super.hidden = true;
     }
@@ -43,7 +43,7 @@ public class UpdateUsers extends Command {
             if (found == null) {
                 Document document = new Document("UserID", user);
                 document.append("Adores", 0);
-                document.append("Credits", 0);
+                //document.append("Credits", 0);
                 collection.insertOne(document);
                 added++;
             } else {
@@ -57,22 +57,17 @@ public class UpdateUsers extends Command {
                     setData.append("Adores", 0);
                     toUpdate = true;
                 }
+                /*
                 if (found.get("Credits") == null) {
                     setData.append("Credits", 0);
                     toUpdate = true;
-                }
+                }*/
                 if (toUpdate) {
                     Document update = new Document();
                     update.append("$set", setData);
                     collection.updateOne(query, update);
                     added++;
                 }
-            }
-
-            // Remove Users
-            User removeUser = e.getJDA().getUserById(found.get("UserID").toString());
-            if (e.getGuild().getMember(removeUser) == null) {
-                collection.deleteOne(found);
             }
         }
         e.reply(added + "/" + members.size() + " users has been added to the database");

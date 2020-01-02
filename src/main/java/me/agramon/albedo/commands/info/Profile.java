@@ -40,7 +40,7 @@ public class Profile extends Command {
         }
 
         String adores;
-        String credits;
+        //String credits;
         String URI = Config.getURI("URI");
         MongoClient mongoClient = MongoClients.create(URI);
         MongoDatabase db = mongoClient.getDatabase("Albedo");
@@ -49,7 +49,7 @@ public class Profile extends Command {
         Document found = collection.find(new Document("UserID", user.getId())).first();
         if (found != null) {
             adores = found.get("Adores") + "";
-            credits = found.get("Credits") + "";
+            //credits = found.get("Credits") + "";
         } else {
             e.reply("You are current not in the database. Please contact an administrator!");
             return;
@@ -64,8 +64,8 @@ public class Profile extends Command {
                 .addField("Username:", user.getName(), false)
                 .addField("Account Created:", user.getTimeCreated().format(DateTimeFormatter.RFC_1123_DATE_TIME), false)
                 .addField("Server Joined:", e.getGuild().getMember(user).getTimeJoined().format(DateTimeFormatter.RFC_1123_DATE_TIME), false)
-                .addField("Adores " + emote.getAsMention() + ":", adores, false)
-                .addField("Credits 💰:", credits, false);
+                .addField("Adores " + emote.getAsMention() + ":", adores, false);
+                //.addField("Credits 💰:", credits, false);
 
         e.reply(eb.build());
     }

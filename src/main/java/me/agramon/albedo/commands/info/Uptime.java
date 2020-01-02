@@ -11,7 +11,7 @@ import java.lang.management.RuntimeMXBean;
 public class Uptime extends Command {
     public Uptime() {
         super.name = "uptime";
-        super.help = "Shows the uptime of the bot";
+        super.help = "Shows how long the bot has been online";
         super.cooldown = 5;
         super.category = new Category("Help/Info");
     }

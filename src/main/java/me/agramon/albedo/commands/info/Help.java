@@ -49,11 +49,7 @@ public class Help extends Command {
                         , true)
 
                 .addField(":moneybag: Economy :moneybag:",
-                        "• balance <user> \n" +
-                                "• buy <item> \n" +
-                                "• daily \n" +
-                                "• leaderboard <category> \n" +
-                                "• shop \n"
+                        "• leaderboard <category> \n"
                         , true)
 
                 .addField(":performing_arts: Roleplay :performing_arts:",
@@ -93,9 +89,7 @@ public class Help extends Command {
 
                 .addField(":pencil: Administration :pencil:",
                         "• chatclear <#> \n" +
-                                "• creditsall <#> \n" +
                                 "• setadores <user> <#> \n" +
-                                "• setcredits <user> <#> \n" +
                                 "• updateusers \n"
                         , true);
 

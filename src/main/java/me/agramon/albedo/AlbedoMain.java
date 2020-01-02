@@ -48,10 +48,10 @@ public class AlbedoMain {
         builder.addCommand(new Search());
         builder.addCommand(new Smug());
 
-        builder.addCommand(new Balance());
-        builder.addCommand(new Buy());
-        builder.addCommand(new Daily());
-        builder.addCommand(new Shop());
+        //builder.addCommand(new Balance());
+        //builder.addCommand(new Buy());
+        //builder.addCommand(new Daily());
+        //builder.addCommand(new Shop());
         builder.addCommand(new Leaderboard());
 
         builder.addCommand(new Cuddle());
@@ -82,9 +82,9 @@ public class AlbedoMain {
         builder.addCommand(new Yuri());
 
         builder.addCommand(new ChatClear());
-        builder.addCommand(new CreditsAll());
+        //builder.addCommand(new CreditsAll());
         builder.addCommand(new SetAdores());
-        builder.addCommand(new SetCredits());
+        //builder.addCommand(new SetCredits());
         builder.addCommand(new UpdateUsers());
 
         CommandClient client = builder.build();
