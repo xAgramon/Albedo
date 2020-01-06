@@ -4,7 +4,7 @@ import me.agramon.albedo.api.ImageBoardAPI;
 
 public class Moescape extends ImageBoardAPI {
     public Moescape() {
-        super("moescape", "Anime characters in their environment", 5, "konachan", "landscape");
+        super("moescape", "Random image of anime in real life", 5, "konachan", "landscape");
         super.category = new Category("Fun");
     }
 }

@@ -12,7 +12,7 @@ public class Kitsune extends Command {
 
     public Kitsune() {
         super.name = "kitsune";
-        super.help = "Fox girls <3";
+        super.help = "Random image of fox girls <3";
         super.cooldown = 5;
         super.category = new Category("Fun");
     }

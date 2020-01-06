@@ -18,7 +18,7 @@ import java.time.format.DateTimeFormatter;
 public class Profile extends Command {
     public Profile() {
         super.name = "profile";
-        super.help = "Info about yourself ;)";
+        super.help = "Shows info about yourself";
         super.category = new Category("Help/Info");
         super.cooldown = 5;
         super.arguments = "<name>";
@@ -35,12 +35,11 @@ public class Profile extends Command {
         } else if (e.getJDA().getUserById(e.getArgs()) != null) {
             user = e.getJDA().getUserById(e.getArgs());
         } else {
-            e.reply("Invalid arguments! The command is >profile <@user>");
+            e.reply("The currect usage is >profile @user");
             return;
         }
 
         String adores;
-        //String credits;
         String URI = Config.getURI("URI");
         MongoClient mongoClient = MongoClients.create(URI);
         MongoDatabase db = mongoClient.getDatabase("Albedo");
@@ -49,7 +48,6 @@ public class Profile extends Command {
         Document found = collection.find(new Document("UserID", user.getId())).first();
         if (found != null) {
             adores = found.get("Adores") + "";
-            //credits = found.get("Credits") + "";
         } else {
             e.reply("You are current not in the database. Please contact an administrator!");
             return;
@@ -65,7 +63,6 @@ public class Profile extends Command {
                 .addField("Account Created:", user.getTimeCreated().format(DateTimeFormatter.RFC_1123_DATE_TIME), false)
                 .addField("Server Joined:", e.getGuild().getMember(user).getTimeJoined().format(DateTimeFormatter.RFC_1123_DATE_TIME), false)
                 .addField("Adores " + emote.getAsMention() + ":", adores, false);
-                //.addField("Credits 💰:", credits, false);
 
         e.reply(eb.build());
     }

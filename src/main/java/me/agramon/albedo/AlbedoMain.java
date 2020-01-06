@@ -3,7 +3,7 @@ package me.agramon.albedo;
 import com.jagrosh.jdautilities.command.CommandClient;
 import com.jagrosh.jdautilities.command.CommandClientBuilder;
 import me.agramon.albedo.commands.administration.*;
-import me.agramon.albedo.commands.economy.*;
+import me.agramon.albedo.commands.art.*;
 import me.agramon.albedo.commands.fun.*;
 import me.agramon.albedo.commands.info.*;
 import me.agramon.albedo.commands.nsfw.*;
@@ -29,10 +29,13 @@ public class AlbedoMain {
 
         builder.addCommand(new Avatar());
         builder.addCommand(new Help());
+        builder.addCommand(new Leaderboard());
         builder.addCommand(new Ping());
         builder.addCommand(new Profile());
         builder.addCommand(new ServerInfo());
         builder.addCommand(new Uptime());
+
+        builder.addCommand(new artprompt());
 
         builder.addCommand(new Albedo());
         builder.addCommand(new Baka());
@@ -47,12 +50,6 @@ public class AlbedoMain {
         builder.addCommand(new Safebooru());
         builder.addCommand(new Search());
         builder.addCommand(new Smug());
-
-        //builder.addCommand(new Balance());
-        //builder.addCommand(new Buy());
-        //builder.addCommand(new Daily());
-        //builder.addCommand(new Shop());
-        builder.addCommand(new Leaderboard());
 
         builder.addCommand(new Cuddle());
         builder.addCommand(new Kiss());
@@ -82,16 +79,13 @@ public class AlbedoMain {
         builder.addCommand(new Yuri());
 
         builder.addCommand(new ChatClear());
-        //builder.addCommand(new CreditsAll());
         builder.addCommand(new SetAdores());
-        //builder.addCommand(new SetCredits());
         builder.addCommand(new UpdateUsers());
 
         CommandClient client = builder.build();
 
         jda.addEventListener(client);
         jda.addEventListener(new ArtReaction());
-        //jda.addEventListener(new Credits());
         jda.addEventListener(new Log());
         jda.addEventListener(new UserCreateDB());
     }

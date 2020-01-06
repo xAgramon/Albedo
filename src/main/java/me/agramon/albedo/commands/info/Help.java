@@ -29,9 +29,14 @@ public class Help extends Command {
                                 "• dmhelp \n" +
                                 "• avatar <user> \n" +
                                 "• info \n" +
+                                "• leaderboard <category> \n" +
                                 "• ping \n" +
                                 "• profile <user> \n" +
                                 "• uptime \n"
+                        , true)
+
+                .addField(":art: Art :art:",
+                        "• artprompt \n"
                         , true)
 
                 .addField(":video_game: Fun :video_game:",
@@ -42,14 +47,11 @@ public class Help extends Command {
                                 "• horns \n" +
                                 "• kemonomimi \n" +
                                 "• kitsune \n" +
+                                "• moescape \n" +
                                 "• neko <gif> \n" +
                                 "• paste <message> \n" +
                                 "• safebooru \n" +
                                 "• smug \n"
-                        , true)
-
-                .addField(":moneybag: Economy :moneybag:",
-                        "• leaderboard <category> \n"
                         , true)
 
                 .addField(":performing_arts: Roleplay :performing_arts:",

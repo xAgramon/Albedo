@@ -24,7 +24,7 @@ public class Search extends Command {
         String [] args = temp.split("\\s+");
 
         if (temp.isEmpty() || args.length != 2) {
-            e.reply("Invalid arguments! The correct usage is >s <imageboard> <tag>");
+            e.reply("The correct usage is >s <imageboard> <tag>");
             return;
         }
 

@@ -16,6 +16,7 @@ public class ImageBoardAPI extends Command {
     public String imageBoard;
     public String api;
 
+    // Specific tag from an ImageBoard
     public ImageBoardAPI(String name, String help, int cooldown, String imageBoard, String api) {
         super.name = name;
         super.help = help;
@@ -25,6 +26,7 @@ public class ImageBoardAPI extends Command {
         this.api = api;
     }
 
+    // Random image from an ImageBoard
     public ImageBoardAPI(String name, String help, int cooldown, String imageboard) {
         super.name = name;
         super.help = help;

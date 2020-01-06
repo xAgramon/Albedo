@@ -1,4 +1,4 @@
-package me.agramon.albedo.commands.economy;
+package me.agramon.albedo.commands.info;
 
 import com.jagrosh.jdautilities.command.Command;
 import com.jagrosh.jdautilities.command.CommandEvent;
@@ -18,7 +18,7 @@ public class Leaderboard extends Command {
     public Leaderboard() {
         super.name = "leaderboard";
         super.cooldown = 5;
-        super.category = new Category("Economy");
+        super.category = new Category("Help/Info");
         super.aliases = new String[]{"lb"};
         super.help = "The top weebs of the server";
     }
@@ -50,7 +50,6 @@ public class Leaderboard extends Command {
             cursor.close();
         }
 
-        int index;
         if (e.getArgs().equalsIgnoreCase("adores")) {
 
             Collections.sort(list, compareByAdores.reversed());
@@ -67,24 +66,8 @@ public class Leaderboard extends Command {
 
             e.reply(eb.build());
 
-        } /*else if (e.getArgs().equalsIgnoreCase("credits")) {
-
-            Collections.sort(list, compareByCredits.reversed());
-
-            EmbedBuilder eb = new EmbedBuilder()
-                    .setColor(Color.MAGENTA)
-                    .setTitle("Richest Weebs 💰")
-                    .setThumbnail(e.getJDA().getUserById(list.get(0).get("UserID").toString()).getAvatarUrl());
-
-            for (int i = 0; i < 10; i++) {
-                User user = e.getJDA().getUserById(list.get(i).get("UserID").toString());
-                eb.addField("", "**" + (i+1) + ".** " + user.getAsTag() + " - ``" + list.get(i).get("Credits") + "``", false);
-            }
-
-            e.reply(eb.build());
-
-        } */else {
-            e.reply("That is not a valid category! Please try >lb <adores/credits>");
+        } else {
+            e.reply("That is not a valid category! Please try >lb <adores>");
         }
     }
 
@@ -94,11 +77,4 @@ public class Leaderboard extends Command {
             return ((Integer)o1.get("Adores")).compareTo((Integer)(o2.get("Adores")));
         }
     };
-
-    /*Comparator<Document> compareByCredits = new Comparator<Document>() {
-        @Override
-        public int compare(Document o1, Document o2) {
-            return ((Integer)o1.get("Credits")).compareTo((Integer)(o2.get("Credits")));
-        }
-    };*/
 }

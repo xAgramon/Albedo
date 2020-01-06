@@ -5,7 +5,7 @@ import me.agramon.albedo.api.NekosLifeAPI;
 
 public class Smug extends NekosLifeAPI {
     public Smug() {
-        super("smug", "Haha! You're wrong!", 5, "smug");
+        super("smug", "Random Smug GIF", 5, "smug");
         super.category = new Category("Fun");
     }
 

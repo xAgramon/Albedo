@@ -5,7 +5,7 @@ import me.agramon.albedo.api.ImageBoardAPI;
 
 public class Bowsette extends ImageBoardAPI {
     public Bowsette() {
-        super("bowsette", "Bowsette <3", 5, "safebooru", "bowsette");
+        super("bowsette", "Random Bowsette image", 5, "safebooru", "bowsette");
     }
 
     @Override

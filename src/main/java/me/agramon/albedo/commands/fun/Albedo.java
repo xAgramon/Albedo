@@ -13,7 +13,7 @@ public class Albedo extends Command {
     public Albedo() {
         super.name = "albedo";
         super.category = new Category("Fun");
-        super.help = "Who do you think?!";
+        super.help = "Random image/gif of Albedo";
         super.aliases = new String[]{"waifu"};
         super.cooldown = 5;
     }
@@ -35,7 +35,7 @@ public class Albedo extends Command {
     }
 
     private String getGIF() {
-        ArrayList<String> gifs = new ArrayList<String>();
+        ArrayList<String> gifs = new ArrayList<>();
         gifs.add("https://thumbs.gfycat.com/FragrantAdoredGalapagosalbatross-size_restricted.gif");
         gifs.add("https://thumbs.gfycat.com/OffbeatPeskyFlatcoatretriever-size_restricted.gif");
         gifs.add("https://thumbs.gfycat.com/ForcefulInsidiousIcterinewarbler-size_restricted.gif");
@@ -49,7 +49,7 @@ public class Albedo extends Command {
     }
 
     private String getFact() {
-        ArrayList<String> facts = new ArrayList<String>();
+        ArrayList<String> facts = new ArrayList<>();
         facts.add("In the Web Novel, Albedo doesn't exist, along with her sisters.");
         facts.add("Albedo is a Latin word meaning \"whiteness.\"");
         facts.add("Albedo is the second NPC to be given the Ring of Ainz Ooal Gown.");

@@ -20,7 +20,6 @@ public class UserCreateDB extends ListenerAdapter {
         Document user = new Document("UserID", e.getMember().getId());
         user.append("UserID", e.getMember().getId());
         user.append("Adores", 0);
-        //user.append("Credits", 0);
         collection.insertOne(user);
     }
 

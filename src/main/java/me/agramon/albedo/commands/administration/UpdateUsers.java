@@ -9,7 +9,6 @@ import com.mongodb.client.MongoDatabase;
 import me.agramon.albedo.Config;
 import net.dv8tion.jda.api.Permission;
 import net.dv8tion.jda.api.entities.Member;
-import net.dv8tion.jda.api.entities.User;
 import org.bson.Document;
 
 import java.util.List;
@@ -37,37 +36,14 @@ public class UpdateUsers extends Command {
         MongoCollection<Document> collection = db.getCollection("Anime Argonauts");
 
         for (int i = 0; i < members.size(); i++) {
-            // Add Users
             String user = members.get(i).getId();
             Document found = collection.find(new Document("UserID", user)).first();
+
             if (found == null) {
                 Document document = new Document("UserID", user);
                 document.append("Adores", 0);
-                //document.append("Credits", 0);
                 collection.insertOne(document);
                 added++;
-            } else {
-                boolean toUpdate = false;
-
-                Document query = new Document();
-                query.append("UserID", found.get("UserID"));
-
-                Document setData = new Document();
-                if (found.get("Adores") == null) {
-                    setData.append("Adores", 0);
-                    toUpdate = true;
-                }
-                /*
-                if (found.get("Credits") == null) {
-                    setData.append("Credits", 0);
-                    toUpdate = true;
-                }*/
-                if (toUpdate) {
-                    Document update = new Document();
-                    update.append("$set", setData);
-                    collection.updateOne(query, update);
-                    added++;
-                }
             }
         }
         e.reply(added + "/" + members.size() + " users has been added to the database");

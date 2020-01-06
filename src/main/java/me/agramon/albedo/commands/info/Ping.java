@@ -10,7 +10,7 @@ public class Ping extends Command {
 
     public Ping() {
         super.name = "ping";
-        super.help = "Not pong";
+        super.help = "Shows the ping of the bot";
         super.cooldown = 5;
         super.category = new Category("Help/Info");
     }
