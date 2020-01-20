@@ -18,7 +18,6 @@ public class UpdateUsers extends Command {
         super.name = "updateusers";
         super.help = "Adds all users to the database";
         super.category = new Category("Administration");
-        super.hidden = true;
     }
 
     @Override
@@ -32,8 +31,8 @@ public class UpdateUsers extends Command {
         int added = 0;
         String URI = Config.getURI("URI");
         MongoClient mongoClient = MongoClients.create(URI);
-        MongoDatabase db = mongoClient.getDatabase("Albedo");
-        MongoCollection<Document> collection = db.getCollection("Anime Argonauts");
+        MongoDatabase db = mongoClient.getDatabase(Config.getDB("DATABASE"));
+        MongoCollection<Document> collection = db.getCollection(Config.getCol("COLLECTION"));
 
         for (int i = 0; i < members.size(); i++) {
             String user = members.get(i).getId();

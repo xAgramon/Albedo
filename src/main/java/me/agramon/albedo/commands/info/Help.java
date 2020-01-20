@@ -12,6 +12,7 @@ public class Help extends Command {
         super.name = "help";
         super.cooldown = 5;
         super.help = "Command list";
+        super.aliases = new String[]{"cmds", "commands"};
         super.category = new Category("Help/Info");
     }
 
@@ -27,20 +28,20 @@ public class Help extends Command {
                 .addField(":question: Help/Info :question:",
                         "• help \n" +
                                 "• dmhelp \n" +
-                                "• avatar <user> \n" +
+                                "• avatar (user) \n" +
                                 "• info \n" +
                                 "• leaderboard <category> \n" +
                                 "• ping \n" +
-                                "• profile <user> \n" +
+                                "• profile (user) \n" +
                                 "• uptime \n"
                         , true)
 
                 .addField(":art: Art :art:",
-                        "• artprompt \n"
+                        "• artprompt <category> \n"
                         , true)
 
                 .addField(":video_game: Fun :video_game:",
-                        "• albedo <gif> \n" +
+                        "• albedo (gif) \n" +
                                 "• baka \n" +
                                 "• bowsette \n" +
                                 "• e926 \n" +
@@ -55,18 +56,18 @@ public class Help extends Command {
                         , true)
 
                 .addField(":performing_arts: Roleplay :performing_arts:",
-                        "• cuddle <user> \n" +
-                                "• kiss <user> \n" +
-                                "• lick <user> \n" +
-                                "• pat <user> \n" +
-                                "• poke <user> \n" +
-                                "• slap <user> \n" +
-                                "• tickle <user> \n"
+                        "• cuddle (user) \n" +
+                                "• kiss (user) \n" +
+                                "• lick (user) \n" +
+                                "• pat (user) \n" +
+                                "• poke (user) \n" +
+                                "• slap (user) \n" +
+                                "• tickle (user) \n"
                         , true)
 
                 .addField(":underage: NSFW :underage:",
                         "• anal \n" +
-                                "• blowjob <gif> \n" +
+                                "• blowjob (gif) \n" +
                                 "• boobs \n" +
                                 "• cum \n" +
                                 "• danbooru \n" +
@@ -74,15 +75,15 @@ public class Help extends Command {
                                 "• feet \n" +
                                 "• femdom \n" +
                                 "• gelbooru \n" +
-                                "• hentai <gif> \n" +
+                                "• hentai (gif) \n" +
                                 "• kemonomimi \n" +
                                 "• kitsune \n" +
                                 "• konochan \n" +
                                 "• lewd \n" +
-                                "• neko <gif> \n" +
+                                "• neko (gif) \n" +
                                 "• pussy \n" +
                                 "• rule34 \n" +
-                                "• solo <gif>\n" +
+                                "• solo (gif)\n" +
                                 "• trap \n" +
                                 "• vanilla \n" +
                                 "• yandere \n" +
@@ -91,6 +92,7 @@ public class Help extends Command {
 
                 .addField(":pencil: Administration :pencil:",
                         "• chatclear <#> \n" +
+                                "• kick <user> (reason) \n" +
                                 "• setadores <user> <#> \n" +
                                 "• updateusers \n"
                         , true);

@@ -37,7 +37,6 @@ public class ChatClear extends Command {
             e.reply("It is impossible, however I will do as you wish!");
             return;
         }
-
         if (args.isEmpty()) {
             e.reply("Please tell me many messages do you want to clear??");
         }

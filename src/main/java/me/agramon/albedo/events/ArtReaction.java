@@ -75,8 +75,8 @@ public class ArtReaction extends ListenerAdapter {
 
                     String URI = Config.getURI("URI");
                     MongoClient mongoClient = MongoClients.create(URI);
-                    MongoDatabase db = mongoClient.getDatabase("Albedo");
-                    MongoCollection<Document> collection = db.getCollection("Anime Argonauts");
+                    MongoDatabase db = mongoClient.getDatabase(Config.getDB("DATABASE"));
+                    MongoCollection<Document> collection = db.getCollection(Config.getCol("COLLECTION"));
 
                     Document found = collection.find(new Document("UserID", user)).first();
                     if (found != null) {

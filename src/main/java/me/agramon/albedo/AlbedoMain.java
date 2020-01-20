@@ -19,7 +19,7 @@ import javax.security.auth.login.LoginException;
 public class AlbedoMain {
     private AlbedoMain() throws LoginException {
         final JDA jda = new JDABuilder(AccountType.BOT)
-                .setToken(Config.getKey("TOKEN")).build();
+                .setToken(Config.getToken("TOKEN")).build();
 
         CommandClientBuilder builder = new CommandClientBuilder();
         builder.setPrefix(">");
@@ -35,7 +35,7 @@ public class AlbedoMain {
         builder.addCommand(new ServerInfo());
         builder.addCommand(new Uptime());
 
-        builder.addCommand(new artprompt());
+        builder.addCommand(new ArtPrompt());
 
         builder.addCommand(new Albedo());
         builder.addCommand(new Baka());
@@ -79,6 +79,7 @@ public class AlbedoMain {
         builder.addCommand(new Yuri());
 
         builder.addCommand(new ChatClear());
+        builder.addCommand(new Kick());
         builder.addCommand(new SetAdores());
         builder.addCommand(new UpdateUsers());
 
@@ -87,7 +88,7 @@ public class AlbedoMain {
         jda.addEventListener(client);
         jda.addEventListener(new ArtReaction());
         jda.addEventListener(new Log());
-        jda.addEventListener(new UserCreateDB());
+        jda.addEventListener(new JoinLeaveEvent());
     }
 
     public static void main(String args[]) throws LoginException {

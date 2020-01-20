@@ -26,15 +26,10 @@ public class Leaderboard extends Command {
     @Override
     protected void execute(CommandEvent e) {
 
-        if (e.getArgs().isEmpty()) {
-            e.reply("The correct usage is >lb <adore>");
-            return;
-        }
-
         String URI = Config.getURI("URI");
         MongoClient mongoClient = MongoClients.create(URI);
-        MongoDatabase db = mongoClient.getDatabase("Albedo");
-        MongoCollection<Document> collection = db.getCollection("Anime Argonauts");
+        MongoDatabase db = mongoClient.getDatabase(Config.getDB("DATABASE"));
+        MongoCollection<Document> collection = db.getCollection(Config.getCol("COLLECTION"));
 
         FindIterable<Document> fi = collection.find();
         MongoCursor<Document> cursor = fi.iterator();
@@ -50,7 +45,7 @@ public class Leaderboard extends Command {
             cursor.close();
         }
 
-        if (e.getArgs().equalsIgnoreCase("adores")) {
+        if (e.getArgs().isEmpty() || e.getArgs().equalsIgnoreCase("adores")) {
 
             Collections.sort(list, compareByAdores.reversed());
 
@@ -67,14 +62,9 @@ public class Leaderboard extends Command {
             e.reply(eb.build());
 
         } else {
-            e.reply("That is not a valid category! Please try >lb <adores>");
+            e.reply("That is not a valid category! The correct usage is >lb <adores>");
         }
     }
 
-    Comparator<Document> compareByAdores = new Comparator<Document>() {
-        @Override
-        public int compare(Document o1, Document o2) {
-            return ((Integer)o1.get("Adores")).compareTo((Integer)(o2.get("Adores")));
-        }
-    };
+    Comparator<Document> compareByAdores = Comparator.comparing(o -> ((Integer) o.get("Adores")));
 }
