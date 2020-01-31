@@ -22,18 +22,16 @@ public class ArtPrompt extends Command {
     protected void execute(CommandEvent e) {
         String url;
         if (e.getArgs().isEmpty()) {
-            e.reply("The correct usage is: >ap <character/creature/environment/fantasy>");
+            e.reply("The correct usage is: >ap <character/catgirl/magicalgirl>");
             return;
         } else if (e.getArgs().equals("character")) {
-            url = "https://artprompts.org/character/";
-        } else if (e.getArgs().equals("creature")) {
-            url = "https://artprompts.org/creature";
-        } else if (e.getArgs().equals("environment")) {
-            url = "https://artprompts.org/environment";
-        } else if (e.getArgs().equals("fantasy")) {
-            url = "https://www.magatsu.net/generators/fantasy-art/index.php";
+            url = "https://www.seventhsanctum.com/generate.php?Genname=generalperson";
+        } else if (e.getArgs().equals("catgirl")) {
+            url = "https://www.seventhsanctum.com/generate.php?Genname=catgirl";
+        } else if (e.getArgs().equals("magicalgirl")) {
+            url = "https://www.seventhsanctum.com/generate.php?Genname=magicalgirl";
         } else {
-            e.reply("The correct usage is: >ap <character/creature/environment/fantasy>");
+            e.reply("The correct usage is: >ap <character/catgirl/magicalgirl>");
             return;
         }
 
@@ -46,15 +44,20 @@ public class ArtPrompt extends Command {
         Document doc = Jsoup.parse(html);
         String text = doc.body().text();
 
-        if (e.getArgs().equals("fantasy")) {
-            prompt = text.substring(text.indexOf("Your prompt: ") + 13, text.indexOf("Find more"));
+        if (e.getArgs().equals("character")) {
+            prompt = text.substring(1055, text.indexOf(" This", 1055));
+        } else if (e.getArgs().equals("catgirl")) {
+            prompt = text.substring(958, text.indexOf(" This", 958));
+        } else if (e.getArgs().equals("magicalgirl")){
+            prompt = text.substring(937, text.indexOf(" This", 937));
         } else {
-            prompt = text.substring(text.indexOf("!") + 1, text.indexOf("Submit"));
+            e.reply("The correct usage is: >ap <character/catgirl/magicalgirl>");
+            return;
         }
 
         EmbedBuilder eb = new EmbedBuilder()
                 .setColor(Color.MAGENTA)
-                .setDescription("Your art prompt is: " + prompt);
+                .setDescription(prompt);
         e.reply(eb.build());
     }
 }
