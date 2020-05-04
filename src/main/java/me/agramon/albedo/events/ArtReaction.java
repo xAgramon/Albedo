@@ -19,14 +19,14 @@ public class ArtReaction extends ListenerAdapter {
         if (e.getAuthor().isBot()) { return; }
 
         String channel = e.getMessage().getChannel().getName();
-        if ((channel.equals("completed-art") || channel.equals("work-in-progress") || channel.equals("nsfw-art") || channel.equals("other")) && !(e.getMessage().getAttachments().isEmpty())) {
+        if ((channel.equals("completed-art") || channel.equals("work-in-progress") || channel.equals("nsfw-art") || channel.equals("nsfw-wip")) && !(e.getMessage().getAttachments().isEmpty())) {
             e.getMessage().addReaction("albedo1:652666759651917841").queue();
         }
     }
 
     public void onGuildMessageReactionAdd(GuildMessageReactionAddEvent e) {
         if (e.getReactionEmote().getName().equals("albedo1") && !e.getMember().getUser().equals(e.getJDA().getSelfUser())) {
-            if (e.getChannel().getName().equals("completed-art") || e.getChannel().getName().equals("work-in-progress") || e.getChannel().getName().equals("nsfw-art") || e.getChannel().getName().equals("other")) {
+            if (e.getChannel().getName().equals("completed-art") || e.getChannel().getName().equals("work-in-progress") || e.getChannel().getName().equals("nsfw-art") || e.getChannel().getName().equals("nsfw-wip")) {
                 MessageChannel m = e.getChannel();
                 m.retrieveMessageById(e.getMessageId()).queue(message -> {
 
@@ -63,7 +63,7 @@ public class ArtReaction extends ListenerAdapter {
 
     public void onGuildMessageReactionRemove(GuildMessageReactionRemoveEvent e) {
         if (e.getReactionEmote().getName().equals("albedo1") && !e.getMember().getUser().equals(e.getJDA().getSelfUser())) {
-            if (e.getChannel().getName().equals("completed-art") || e.getChannel().getName().equals("work-in-progress") || e.getChannel().getName().equals("nsfw-art") || e.getChannel().getName().equals("other")) {
+            if (e.getChannel().getName().equals("completed-art") || e.getChannel().getName().equals("work-in-progress") || e.getChannel().getName().equals("nsfw-art") || e.getChannel().getName().equals("nsfw-wip")) {
                 MessageChannel m = e.getChannel();
                 m.retrieveMessageById(e.getMessageId()).queue(message -> {
 
