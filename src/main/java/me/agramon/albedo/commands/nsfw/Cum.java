@@ -6,7 +6,7 @@ import me.agramon.albedo.api.NekosLifeAPI;
 public class Cum extends NekosLifeAPI {
 
     public Cum() {
-        super("cum", "Milk", 5, "cum");
+        super("cum", "Milk", 0, "cum");
     }
 
     @Override

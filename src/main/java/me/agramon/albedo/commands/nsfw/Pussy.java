@@ -6,7 +6,7 @@ import me.agramon.albedo.api.NekosLifeAPI;
 public class Pussy extends NekosLifeAPI {
 
     public Pussy() {
-        super("pussy", "Cat", 5, "pussy");
+        super("pussy", "Cat", 0, "pussy");
     }
 
     @Override

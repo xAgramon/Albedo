@@ -12,7 +12,6 @@ public class Solo extends Command {
     public Solo() {
         super.name = "solo";
         super.help = "I love myself";
-        super.cooldown = 5;
         super.category = new Category("NSFW");
     }
 

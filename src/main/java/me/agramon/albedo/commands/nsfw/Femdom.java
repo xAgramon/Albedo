@@ -6,7 +6,7 @@ import me.agramon.albedo.api.NekosLifeAPI;
 public class Femdom extends NekosLifeAPI {
 
     public Femdom() {
-        super("femdom", "Girls reign supreme", 5, "femdom");
+        super("femdom", "Girls reign supreme", 0, "femdom");
     }
 
     @Override

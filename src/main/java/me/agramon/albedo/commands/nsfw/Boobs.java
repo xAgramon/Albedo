@@ -12,7 +12,6 @@ public class Boobs extends Command {
     public Boobs() {
         super.name = "boobs";
         super.help = "O.O";
-        super.cooldown = 5;
         super.category = new Category("NSFW");
         super.aliases = new String[]{"tits", "oppai"};
     }

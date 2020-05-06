@@ -5,7 +5,7 @@ import me.agramon.albedo.api.ImageBoardAPI;
 
 public class Konochan extends ImageBoardAPI {
     public Konochan() {
-        super("konochan", "Random NSFW anime wallpaper", 5, "konochan");
+        super("konochan", "Random NSFW anime wallpaper", 0, "konochan");
         super.aliases = new String[]{"kc"};
         super.category = new Category("NSFW");
     }

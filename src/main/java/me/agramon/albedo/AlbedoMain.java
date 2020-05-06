@@ -29,7 +29,6 @@ public class AlbedoMain {
 
         builder.addCommand(new Avatar());
         builder.addCommand(new Help());
-        builder.addCommand(new Leaderboard());
         builder.addCommand(new Ping());
         builder.addCommand(new Profile());
         builder.addCommand(new ServerInfo());
@@ -46,7 +45,6 @@ public class AlbedoMain {
         builder.addCommand(new Kitsune());
         builder.addCommand(new Moescape());
         builder.addCommand(new Neko());
-        builder.addCommand(new Paste());
         builder.addCommand(new Safebooru());
         builder.addCommand(new Search());
         builder.addCommand(new Smug());
@@ -79,16 +77,12 @@ public class AlbedoMain {
         builder.addCommand(new Yuri());
 
         builder.addCommand(new ChatClear());
-        builder.addCommand(new Kick());
-        builder.addCommand(new SetAdores());
-        builder.addCommand(new UpdateUsers());
 
         CommandClient client = builder.build();
 
         jda.addEventListener(client);
         jda.addEventListener(new ArtReaction());
         jda.addEventListener(new Log());
-        jda.addEventListener(new JoinLeaveEvent());
     }
 
     public static void main(String args[]) throws LoginException {

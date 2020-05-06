@@ -13,7 +13,7 @@ public class ServerInfo extends Command {
         super.name = "serverinfo";
         super.help = "Shows the server info";
         super.category = new Category("Help/Info");
-        super.cooldown = 5;
+        super.cooldown = 3;
         super.aliases = new String[]{"info"};
     }
 

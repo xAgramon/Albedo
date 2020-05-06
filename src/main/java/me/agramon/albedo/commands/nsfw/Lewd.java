@@ -5,7 +5,7 @@ import me.agramon.albedo.api.NekosLifeAPI;
 
 public class Lewd extends NekosLifeAPI {
     public Lewd () {
-        super("lewd", "Random lewd image", 5, "classic");
+        super("lewd", "Random lewd image", 0, "classic");
     }
 
     @Override

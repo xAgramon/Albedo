@@ -6,7 +6,7 @@ import me.agramon.albedo.api.NekosLifeAPI;
 public class Trap extends NekosLifeAPI {
 
     public Trap() {
-        super("trap", "They're not gay", 5, "trap");
+        super("trap", "They're not gay", 0, "trap");
     }
 
     @Override

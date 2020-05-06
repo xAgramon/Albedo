@@ -6,7 +6,7 @@ import me.agramon.albedo.api.NekosLifeAPI;
 public class Anal extends NekosLifeAPI {
 
     public Anal() {
-        super("anal", "Another hole", 5, "anal");
+        super("anal", "Another hole", 0, "anal");
     }
 
     @Override

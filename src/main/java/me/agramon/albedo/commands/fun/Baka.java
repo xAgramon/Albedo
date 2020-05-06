@@ -5,7 +5,7 @@ import me.agramon.albedo.api.NekosLifeAPI;
 
 public class Baka extends NekosLifeAPI {
     public Baka() {
-        super("baka", "Random baka GIF", 5, "baka");
+        super("baka", "Random baka GIF", 3, "baka");
         super.category = new Category("Fun");
     }
 

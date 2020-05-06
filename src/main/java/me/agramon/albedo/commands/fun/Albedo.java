@@ -15,7 +15,6 @@ public class Albedo extends Command {
         super.category = new Category("Fun");
         super.help = "Random image/gif of Albedo";
         super.aliases = new String[]{"waifu"};
-        super.cooldown = 5;
     }
 
     @Override

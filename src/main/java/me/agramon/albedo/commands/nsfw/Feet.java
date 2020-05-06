@@ -12,7 +12,6 @@ public class Feet extends Command {
     public Feet() {
         super.name = "feet";
         super.help = "Feet gang?";
-        super.cooldown = 5;
         super.category = new Category("NSFW");
     }
 

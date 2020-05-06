@@ -12,7 +12,6 @@ public class Blowjob extends Command {
     public Blowjob() {
         super.name = "blowjob";
         super.help = "O <==8";
-        super.cooldown = 5;
         super.aliases = new String[]{"bj"};
         super.category = new Category("NSFW");
     }

@@ -10,7 +10,7 @@ import java.awt.*;
 public class Help extends Command {
     public Help() {
         super.name = "help";
-        super.cooldown = 5;
+        super.cooldown = 3;
         super.help = "Command list";
         super.aliases = new String[]{"cmds", "commands"};
         super.category = new Category("Help/Info");
@@ -30,7 +30,6 @@ public class Help extends Command {
                                 "• dmhelp \n" +
                                 "• avatar (user) \n" +
                                 "• info \n" +
-                                "• leaderboard <category> \n" +
                                 "• ping \n" +
                                 "• profile (user) \n" +
                                 "• uptime \n"
@@ -91,25 +90,9 @@ public class Help extends Command {
                         , true)
 
                 .addField(":pencil: Administration :pencil:",
-                        "• chatclear <#> \n" +
-                                "• kick <user> (reason) \n" +
-                                "• setadores <user> <#> \n" +
-                                "• updateusers \n"
+                        "• chatclear <#> \n"
                         , true);
 
         e.reply(eb.build());
-
-        /*
-        EmbedBuilder eb2 = new EmbedBuilder()
-                .setColor(Color.MAGENTA)
-                .setTitle("Features")
-
-                .addField(":exclamation: Features :exclamation:",
-                        "➢ Reacts to submissions in art channels \n" +
-                                "➢ Keeps track of 'adores' each submission gets in your profile \n" +
-                                "➢ Economy system with credits (shop soon to come!) \n"
-                        , true);
-        e.reply(eb2.build());
-        */
     }
 }

@@ -12,7 +12,7 @@ public class Neko extends Command {
     public Neko() {
         super.name = "neko";
         super.help = "Random image of cat girls <3";
-        super.cooldown = 5;
+        super.cooldown = 3;
         super.category = new Category("Fun");
     }
 

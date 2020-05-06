@@ -5,7 +5,7 @@ import me.agramon.albedo.api.ImageBoardAPI;
 
 public class Rule34 extends ImageBoardAPI {
     public Rule34() {
-        super("rule34", "Hmm...", 5, "rule34");
+        super("rule34", "Hmm...", 0, "rule34");
         super.category = new Category("NSFW");
     }
 

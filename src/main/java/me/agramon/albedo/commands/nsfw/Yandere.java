@@ -5,7 +5,7 @@ import me.agramon.albedo.api.ImageBoardAPI;
 
 public class Yandere extends ImageBoardAPI {
     public Yandere() {
-        super("yandere", "Random NSFW anime image", 5, "yandere");
+        super("yandere", "Random NSFW anime image", 0, "yandere");
         super.category = new Category("NSFW");
     }
 

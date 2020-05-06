@@ -13,7 +13,6 @@ public class ArtPrompt extends Command {
     public ArtPrompt() {
         super.name = "artprompt";
         super.help = "Gives you a random art prompt to draw";
-        super.cooldown = 3;
         super.category = new Category("Art");
         super.aliases = new String[] {"aab", "ap", "art", "prompt"};
     }

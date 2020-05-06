@@ -9,12 +9,4 @@ public class Config {
     public static String getToken(String token) {
         return dotenv.get(token);
     }
-
-    public static String getURI(String uri) {
-        return dotenv.get(uri);
-    }
-
-    public static String getDB(String database) { return dotenv.get(database); }
-
-    public static String getCol(String collection) { return dotenv.get(collection); }
 }

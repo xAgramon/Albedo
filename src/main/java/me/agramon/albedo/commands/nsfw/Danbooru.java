@@ -5,7 +5,7 @@ import me.agramon.albedo.api.ImageBoardAPI;
 
 public class Danbooru extends ImageBoardAPI {
     public Danbooru() {
-        super("danbooru", "Random NSFW anime image", 5, "danbooru");
+        super("danbooru", "Random NSFW anime image", 0, "danbooru");
         super.aliases = new String[]{"db"};
         super.category = new Category("NSFW");
     }

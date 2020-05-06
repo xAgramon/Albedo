@@ -13,7 +13,6 @@ public class Yuri extends Command {
         super.name = "yuri";
         super.help = "On girl on girl action ;)";
         super.category = new Category("NSFW");
-        super.cooldown = 5;
     }
 
     @Override

@@ -22,12 +22,11 @@ public class Uptime extends Command {
         long uptime = runtimeMXBean.getUptime();
         long uptimeInSeconds = uptime / 1000;
         long numberOfHours = uptimeInSeconds / (60 * 60);
-        long numberOfMinutes = (uptimeInSeconds / 60) - (numberOfHours * 60);
-        long numberOfSeconds = uptimeInSeconds % 60;
+        long numberOfDays = numberOfHours / (24);
 
         EmbedBuilder eb = new EmbedBuilder()
                 .setColor(Color.MAGENTA)
-                .setDescription("Albedo has been up for ``" + numberOfHours + " hours, " + numberOfMinutes + " minutes, " + numberOfSeconds + " seconds``");
+                .setDescription("Albedo has been up for " + numberOfDays + " days and " + numberOfHours + " hours!");
 
         e.reply(eb.build());
     }

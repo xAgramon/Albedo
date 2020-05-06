@@ -12,7 +12,6 @@ public class Hentai extends Command {
     public Hentai() {
         super.name = "hentai";
         super.help = "Random image of hentai ( ͡° ͜ʖ ͡°)";
-        super.cooldown = 5;
         super.category = new Category("NSFW");
     }
 

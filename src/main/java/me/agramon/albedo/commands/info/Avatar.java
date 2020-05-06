@@ -10,7 +10,7 @@ public class Avatar extends Command {
     public Avatar() {
         super.name = "avatar";
         super.help = "Shows you a user's avatar";
-        super.cooldown = 5;
+        super.cooldown = 3;
         super.category = new Category("Help/Info");
     }
 

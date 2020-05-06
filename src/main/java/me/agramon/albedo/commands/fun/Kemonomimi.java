@@ -13,7 +13,7 @@ public class Kemonomimi extends Command {
         super.name = "kemonomimi";
         super.aliases = new String[]{"kemo", "kemono"};
         super.help = "Random image of cute animal-eared girls <3";
-        super.cooldown = 5;
+        super.cooldown = 3;
         super.category = new Category("Fun");
     }
 
