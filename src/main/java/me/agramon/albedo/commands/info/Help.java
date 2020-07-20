@@ -90,7 +90,8 @@ public class Help extends Command {
                         , true)
 
                 .addField(":pencil: Administration :pencil:",
-                        "• chatclear <#> \n"
+                        "• chatclear <#> \n" +
+                                "• getid <#> \n"
                         , true);
 
         e.reply(eb.build());

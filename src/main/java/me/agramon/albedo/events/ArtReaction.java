@@ -14,12 +14,11 @@ public class ArtReaction extends ListenerAdapter {
 
     // Art channels which the bot adds an emote to the artwork (Uses channel ID)
     public ArtReaction() {
-        artChannel.add("677598123006361610"); // Astonishing Art
+        artChannel.add("677598123006361610"); // Share Art
         artChannel.add("703779024639361134"); // Edits
-        artChannel.add("649754421126889482"); // Completed Art
-        artChannel.add("649754444149293076"); // Work in Progress
+        artChannel.add("649754421126889482"); // SFW Art
+        artChannel.add("726933389915062322"); // Softcore NSFW Art
         artChannel.add("656687102918000683"); // NSFW Art
-        artChannel.add("677600085592506370"); // NSFW WIP
         artChannel.add("662389450231513088"); // Monthly Submissions
     }
 
